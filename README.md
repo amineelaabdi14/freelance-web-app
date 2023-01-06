@@ -11,7 +11,7 @@
     <li>User registration and login with email verification</li>
     <li>Advanced search engine allowing buyers to find sellers based on skills, rate, etc.</li>
     <li>Profile page for each user with a detailed description of their skills and work experience
-    Integrated messaging system to allow buyers and sellers to communicate before moving to project stage</li>
+    <li>Integrated messaging system to allow buyers and sellers to communicate before moving to project stage</li>
     <li>Rating and review system to allow users to leave ratings and feedback on completed projects</li>
     <li>Secure online payment system to facilitate payment for completed projects</li>
     <li>A notification system to alert users of new messages, project updates, and other important events</li>
