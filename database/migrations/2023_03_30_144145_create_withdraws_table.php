@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('amount');
+            $table->unsignedBigInteger('payment_method');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('payment_method')->references('id')->on('mayment_methods');
             $table->timestamps();
         });
     }

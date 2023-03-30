@@ -17,6 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('gig_id');
             $table->unsignedBigInteger('rating');
             $table->string('description');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('gig_id')->references('id')->on('gigs');
             $table->timestamps();
         });
     }

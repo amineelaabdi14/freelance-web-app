@@ -16,6 +16,9 @@ return new class extends Migration
             $table->unsignedBigInteger('buyer_id');
             $table->unsignedBigInteger('gig_id');
             $table->unsignedBigInteger('payment_method');
+            $table->foreign('buyer_id')->references('id')->on('users');
+            $table->foreign('gig_id')->references('id')->on('gigs');
+            $table->foreign('payment_method')->references('id')->on('payment_methods');
             $table->timestamps();
         });
     }

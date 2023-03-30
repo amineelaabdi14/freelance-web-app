@@ -16,6 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('gig_id');
             $table->string('message');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('gig_id')->references('id')->on('gigs');
             $table->timestamps();
         });
     }
