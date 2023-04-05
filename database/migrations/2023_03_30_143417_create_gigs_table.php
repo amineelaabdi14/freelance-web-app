@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->unsignedBigInteger('price');
+            $table->unsignedBigInteger('delivery_time');
             $table->unsignedBigInteger('isActive');
             $table->string('image');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

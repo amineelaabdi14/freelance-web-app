@@ -16,7 +16,8 @@ class Gig extends Model
         'description',
         'price',
         'isActive',
-        'image'
+        'image',
+        'delivery_time'
     ];
 
     public function user(){

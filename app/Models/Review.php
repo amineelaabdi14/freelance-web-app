@@ -9,12 +9,9 @@ class Review extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title',
-        'content',
-        'author',
-        'tags',
-        'category_id',
-        'published_at'
+        'user_id',
+        'gig_id',
+        'rating'
     ];
     public function gig(){
         return $this->belongesTo(Gig::class);

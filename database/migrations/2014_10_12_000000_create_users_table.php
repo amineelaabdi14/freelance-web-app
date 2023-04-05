@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('skills');
             $table->string('about');
-            $table->string('Balance');
+            $table->string('balance');
+            $table->unsignedBigInteger('rating');
             $table->rememberToken();
             $table->timestamps();
         });
