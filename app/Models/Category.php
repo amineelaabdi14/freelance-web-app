@@ -12,4 +12,8 @@ class Category extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function gigs(){
+        return $this->hasMany(Gig::class);
+    }
 }

@@ -14,4 +14,11 @@ class Order extends Model
         'gig_id',
         'payment_method',
     ];
+    public function gig(){
+        return $this->belongesTo(Gig::class);
+    }
+    public function payment_method(){
+        return $this->belongesTo(Payment_method::class);
+    }
+    
 }

@@ -16,4 +16,7 @@ class Review extends Model
         'category_id',
         'published_at'
     ];
+    public function gig(){
+        return $this->belongesTo(Gig::class);
+    }
 }
