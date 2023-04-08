@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\EditProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,16 @@ Route::get('/', function () {
     return view('home');
 });
 
+
+Route::get('/profile', function (){
+    return view('profile');
+});
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login')->name('login');
     Route::post('register', 'register')->name('register');
     Route::post('logout', 'logout');
 });
 
+
+Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');
 
