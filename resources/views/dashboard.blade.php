@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>her is the dashboard</h1>
+    <h1>here is the dashboard</h1>
+    <form action="{{ route('creategig') }}" method="POST">
+        @csrf
+        <input type="number" name="category_id">
+        <input type="text" name="title">
+        <input type="text" name="description">
+        <input type="number" name="price">
+        <input type="number" name="delivery_time">
+        <button type="submit">ajoutini hh</button>
+    </form>
 </body>
 </html>

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('delivery_time');
             $table->unsignedBigInteger('isActive');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();

@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\EditProfileController;
+use App\Http\Controllers\GigController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
 
 Route::get('/profile', function (){
     return view('profile');
@@ -31,6 +35,9 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('logout', 'logout');
 });
 
+Route::controller(GigController::class)->group(function () {
+    Route::post('gig', 'create')->name('creategig');
+});
 
 Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');
 
