@@ -39,6 +39,8 @@ Route::controller(GigController::class)->group(function () {
     Route::post('gig', 'create')->name('create-gig');
     Route::put('gig', 'edit')->name('edit-gig');
     Route::delete('gig/{id}', 'delete')->name('delete-gig');
+    Route::get('all-gigs', 'read');
+    Route::get('gig/{id}', 'select');
 });
 
 Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');

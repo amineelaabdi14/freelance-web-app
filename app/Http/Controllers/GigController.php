@@ -15,6 +15,7 @@ class GigController extends Controller
         $gig->save();
         return response()->json($gig);
     }
+
     public function edit(Request $req){
         $gig=Gig::find($req->id);
         $gig->category_id=$req->category_id;
@@ -26,9 +27,21 @@ class GigController extends Controller
         $gig->save();
         return response()->json($gig);
     }
+
     public function delete(Gig $gig){
         $gig->delete();
         return view('dashboard');
     }
-    
+
+    public function read(){
+        return response()->json(Gig::all());
+    }
+
+    public function select($id){
+        $gig=Gig::find($id);
+        if(!$gig){
+            return response()->json('gig not found');
+        }
+        return response()->json($gig);
+    }
 }
