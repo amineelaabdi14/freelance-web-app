@@ -15,4 +15,16 @@ class GigController extends Controller
         $gig->save();
         return response()->json($gig);
     }
+    public function edit(Request $req){
+        $gig=Gig::find($req->id);
+        $gig->category_id=$req->category_id;
+        $gig->title=$req->title;
+        $gig->description=$req->description;
+        $gig->price=$req->price;
+        $gig->delivery_time=$req->delivery_time;
+        $gig->delivery_time=$req->delivery_time;
+        $gig->save();
+        return response()->json($gig);
+    }
+    
 }

@@ -8,8 +8,10 @@
 </head>
 <body>
     <h1>here is the dashboard</h1>
-    <form action="{{ route('creategig') }}" method="POST">
+    <form action="{{ route('edit-gig') }}" method="POST">
         @csrf
+        <input type="hidden" name="_method" value="put" />
+        <input type="number" name="id">
         <input type="number" name="category_id">
         <input type="text" name="title">
         <input type="text" name="description">
