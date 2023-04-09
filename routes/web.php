@@ -37,7 +37,8 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::controller(GigController::class)->group(function () {
     Route::post('gig', 'create')->name('create-gig');
-    Route::put('gig/{id}', 'edit')->name('edit-gig');
+    Route::put('gig', 'edit')->name('edit-gig');
+    Route::delete('gig/{id}', 'delete')->name('delete-gig');
 });
 
 Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');

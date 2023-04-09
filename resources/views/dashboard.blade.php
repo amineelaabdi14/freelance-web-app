@@ -8,9 +8,9 @@
 </head>
 <body>
     <h1>here is the dashboard</h1>
-    <form action="{{ route('edit-gig') }}" method="POST">
+    <form action="{{ route('delete-gig') }}" method="POST">
         @csrf
-        <input type="hidden" name="_method" value="put" />
+        <input type="hidden" name="_method" value="delete" />
         <input type="number" name="id">
         <input type="number" name="category_id">
         <input type="text" name="title">

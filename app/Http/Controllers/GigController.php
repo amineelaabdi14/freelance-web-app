@@ -26,5 +26,9 @@ class GigController extends Controller
         $gig->save();
         return response()->json($gig);
     }
+    public function delete(Gig $gig){
+        $gig->delete();
+        return view('dashboard');
+    }
     
 }
