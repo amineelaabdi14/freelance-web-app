@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('skills');
-            $table->string('about');
+            $table->string('skills')->nullable();
+            $table->string('about')->nullable();
             $table->string('balance');
-            $table->unsignedBigInteger('rating');
+            $table->unsignedBigInteger('rating')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
