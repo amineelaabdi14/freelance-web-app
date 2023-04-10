@@ -1,0 +1,78 @@
+body{
+    width: 100vw;
+}
+#LoginformContainer{
+    background-color:#ffffff;
+    height: 400px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;   
+    padding: 0px 28px 0px 28px;
+    box-shadow: 1px 1px 20px 1px rgba(79, 79, 79, 0.8);
+}
+@media screen and (max-width:450px) {
+    #LoginformContainer{
+        width: 100%;
+        background-color:black !important;
+        border: solid red;
+    }
+}
+#LoginformContainer a{
+    color:#02AAEC;
+    background: none;
+    border: none;
+    text-decoration: none;
+}
+
+#emailFormContainer{
+    margin-bottom: 20px;
+}
+
+.MyLabels{
+    font-size: 16px;
+    color:#7c7c7c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.MyInputs{
+    border-radius: 5px;
+    background-color:#b6b6b6;
+    border: 0px;
+    color:#212121;
+    height: 50px;
+    width:100%;
+    padding-left: 20px;
+    font-size: 18px;
+}
+.MyInputs:focus{
+    outline: none;
+    background-color:#ffffff;
+    border: 1px solid #B9B9B9;
+}
+
+button[name="signMeIn"],button[name="signMeUp"] {
+    background-color:#038DFE;
+    font-size: 16px;
+    font-weight: bold;
+    width: 118px;
+    height: 36px;
+    border-radius: 6px;
+    border: 0px;
+    color: white;
+    filter: saturate(0%);  
+}
+.logoContainer{
+    height: 60px;
+    width: 350px;
+    display: block;
+    margin: auto;           
+    margin-bottom: 20px;
+}

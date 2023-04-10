@@ -2,11 +2,14 @@
 <html lang="en">
     <head>
         <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('css/main.css') }}" rel="stylesheet">
+        <script src="{{ URL::asset('js/main.js') }}">
         <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 <body id="loginContent">
-    <div id="LoginformContainer" class="container">
-        <img src="../resources/logo.png" alt="YouCode" class="mt-4 logoContainer">
+    <div id="LoginformContainer" class="">
+        <img src="images/logo.png" alt="Freelancer.ma" class="mt-4 logoContainer">
         <form action="includes/script.php" class="form d-flex flex-column " method="POST">
             
             <div id="emailFormContainer">
@@ -25,8 +28,6 @@
                 <span><a href="#" onclick="createAccount()">Create an account</a></span>
                 <button type="submit"  name="signMeIn" disabled>Sign In</button>
             </div>
-            <h1 class="bg-danger">heheeh</h1>
-
         </form>
     </div>
     
