@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600;700&display=swap');
 body{
     width: 100vw;
 }
@@ -5,26 +6,20 @@ body{
     background-color:#ffffff;
     height: 400px;
     width: 100%;
+    min-width: 390px;
     max-width: 500px;
     border-radius: 5px;
-    position: absolute;
+    /* position: absolute; */
     top:0;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;   
+    /* margin: auto;    */
     padding: 0px 28px 0px 28px;
     box-shadow: 1px 1px 20px 1px rgba(79, 79, 79, 0.8);
 }
-@media screen and (max-width:450px) {
-    #LoginformContainer{
-        width: 100%;
-        background-color:black !important;
-        border: solid red;
-    }
-}
 #LoginformContainer a{
-    color:#02AAEC;
+    color:#1b758c;
     background: none;
     border: none;
     text-decoration: none;
@@ -59,7 +54,7 @@ body{
 }
 
 button[name="signMeIn"],button[name="signMeUp"] {
-    background-color:#038DFE;
+    background-color:#1b758c;
     font-size: 16px;
     font-weight: bold;
     width: 118px;
@@ -70,9 +65,31 @@ button[name="signMeIn"],button[name="signMeUp"] {
     filter: saturate(0%);  
 }
 .logoContainer{
-    height: 60px;
-    width: 350px;
+    height: 57px;
+    width: 300px;
     display: block;
     margin: auto;           
     margin-bottom: 20px;
+}
+#whoAreWe {
+    font-size: 2.5rem;
+    color:#1b758c;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+#whoAreWeText{
+    text-align: justify;
+    width: 100%;
+    color: gray;
+    font-family: 'Open Sans', sans-serif;
+}
+#first-container{
+    border: solid blue;
+    width: 50%;
+}
+@media  scren and (max-width:990px) {
+    #first-container{
+        width: 500px;
+        border: solid yellow;
+    }
 }
