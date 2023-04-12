@@ -45,6 +45,8 @@ function createAccount ()
 }
 function alrMember()
 {   
+    var registerUrl = '/login';
+    document.getElementById('auth-form').action=registerUrl;
     document.querySelector('button[type=submit]').style.filter="saturate(0%)";
     emailError.innerText="The email address format is incorrect";
     fullName.innerHTML="";
