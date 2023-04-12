@@ -8,13 +8,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 <body id="loginContent">
-    <div class="d-flex flex-column flex-lg-row align-items-center justify-content-lg-around w-100">
+
+    <nav id="" class="navbar shadow-lg d-flex flex-sm-row flex-column justify-content-start">
+        <img id="navLogo" src="images/logo.png" alt="service.ma" alt="" class="ms-4 mt-1" >
+        <span id="slg">Your gateway to reliable services in Morocco</span>
+    </nav>
+
+
+    <div class="d-flex flex-column-reverse flex-lg-row align-items-center justify-content-lg-around w-100 mt-5">
+
         <div id="first-container">
-            <h2 id="whoAreWe">Who are we ?</h2>    
-            <p id="whoAreWeText" class="pb-5 pb-lg-0">Freelancer.ma is a pioneering freelancing platform in Morocco that connects businesses and individuals with talented freelancers for a wide range of projects and services. With a focus on quality, affordability, and convenience, Freelancer.ma is dedicated to providing a seamless and secure platform for both freelancers and clients to collaborate and achieve their goals. Whether you're looking for web design, content creation, translation, or any other freelance service, Freelancer.ma has a diverse pool of skilled professionals ready to meet your needs. Join the Freelancer.ma community today and discover the limitless potential of freelancing!</p>
+            <img src="images/landing.png" id="landing-logo" alt="Freelancer.ma" class="mt-4">
         </div>
-        <div id="LoginformContainer" class="">
-            <img src="images/logo.png" alt="Freelancer.ma" class="mt-4 logoContainer">
+
+        <div id="LoginformContainer" class=" mt-5 mt-lg-0">
+            <img src="images/logo.png" alt="service.ma" class="mt-4 logoContainer">
             <form id="auth-form" action="{{route('login')}}" class="form d-flex flex-column " method="POST">
                 @csrf
                 <div id="emailFormContainer">
@@ -37,5 +45,8 @@
         </div>
 
     </div>
+
+    <h2 id="whoAreWe" class="text-center mt-5">About us</h2>    
+            <p id="whoAreWeText" class="pb-5 pb-lg-0 m-auto ">Welcome to Service.ma, your go-to platform for finding and offering services in Morocco. Our platform was built with the aim of simplifying the process of connecting service providers with service seekers. Whether you're looking for a plumber, an electrician, or a tutor, we've got you covered. Our user-friendly interface allows you to browse through a range of services, read reviews from previous customers, and select the service provider that best suits your needs. At Service.ma, we are dedicated to providing our customers with reliable, high-quality services, and we pride ourselves on our commitment to exceptional customer service. Thank you for choosing Service.ma - we're excited to help you find the services you need!</p>
 </body>
 </html>
