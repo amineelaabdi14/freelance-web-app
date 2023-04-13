@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<x-head :title="'My Profile'"/>
 <body>
-    <form action="{{route('edit-profile')}}" method="POST">
-        @csrf
-        <input type="hidden" name="_method" value="put" />
-        <input type="text" name="newName">
-        <input type="email" name="newEmail">
-        <input type="password" name="newPassword">
-        <input type="password" name="password">
-        <button type="submit">submitini hh</button>
-    </form>
+    <x-navbar />
+    <x-sidebar :element="$elemnt=0" />
+    <div id="profile" class="hasSideBar">
+        <form action="{{route('edit-profile')}}" method="POST">
+            @csrf
+            <input type="hidden" name="_method" value="put" />
+            <label for="newName">Name :</label>
+            <input type="text" name="newName">
+
+            <label for="newEmail">Email</label>
+            <input type="email" name="newEmail">
+
+            <label for="newPassword">New Password</label>
+            <input type="password" name="newPassword">
+
+            <label for="password">Pasword</label>
+            <input type="password" name="password">
+            
+            <button type="submit">submitini hh</button>
+        </form>
+    </div>
 </body>
 </html>

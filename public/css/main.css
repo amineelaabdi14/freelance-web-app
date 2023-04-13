@@ -55,7 +55,7 @@ body{
 }
 
 button[name="signMeIn"],button[name="signMeUp"] {
-    background-color:#0c5ca0;
+    background-color:#038DFE;
     font-size: 16px;
     font-weight: bold;
     width: 118px;
@@ -74,7 +74,7 @@ button[name="signMeIn"],button[name="signMeUp"] {
 }
 #whoAreWe {
     font-size: 2.5rem;
-    color:#0c5ca0;
+    color:#038DFE;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
 }
@@ -107,4 +107,59 @@ button[name="signMeIn"],button[name="signMeUp"] {
     font-weight: 600;
     margin-left: 50px;
 }
-    
+#sideBar{
+    width: 250px;
+    height: calc(100% - 85px);
+    /* height: 100vh; */
+    padding: 0%;
+    margin: 0%;
+    background-color: #ffffff;
+    overflow-y:hidden ;
+}
+.hasSideBar{
+    padding-left: 251px;
+}
+@media screen and (max-width:768px) {
+    #sideBar{
+        width: 60px;
+    }
+    .hasSideBar{
+        padding-left: 61px;
+    }
+}
+#signOutBtn>div{
+    border: solid #9E383A 1px;
+    border-radius: 5px;
+    max-width: 160px;
+    padding: 5px 0px 5px 0px;
+    margin: auto;
+}
+@media screen and (max-width:768px) {
+    #signOutBtn>div{
+        border: none;
+    }
+}
+#signOutBtn>div:hover{
+    background-color: #9E383A;
+}
+#signOutBtn>div:hover .setRedColor{
+    color: white;
+}
+
+#signOutBtn>div:hover .setRedColor{
+    color: white;
+}
+
+.setRedColor{
+    color:#9E383A;
+}
+.liLinks{
+    width: 90%;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: inherit;
+}
