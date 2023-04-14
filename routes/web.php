@@ -19,7 +19,7 @@ use App\Http\Controllers\GigController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('authentication');
 });
 
 Route::get('/dashboard', function () {
