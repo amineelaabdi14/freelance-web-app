@@ -24,17 +24,11 @@ Route::get('/', function () {
     return view('authentication');
 })->name('authenticate')->middleware('guest');
 
-Route::get('/dashboard', function () {
-    return view('dashboard',['myServices'=>Service::all()]);
-})->middleware('auth');
+
 
 Route::get('/profile', function (){
     return view('profile');
 })->middleware('auth')->name('profile');
-
-Route::get('/edit-service/{id}', function ($id) {
-    return view('editservice',['service'=>Service::find($id),'categories'=> Category::all()]);
-})->middleware('auth');
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login')->name('login');

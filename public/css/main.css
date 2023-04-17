@@ -45,7 +45,7 @@ body::-webkit-scrollbar {
     border-radius: 5px;
     background-color:#b6b6b6;
     border: 0px;
-    color:#212121;
+    color:#3c3c3c;
     height: 50px;
     width:100%;
     padding-left: 20px;
@@ -124,9 +124,15 @@ button[name="signMeIn"],button[name="signMeUp"] {
     padding-left: 251px;
     margin-top: 60px;
 }
+.profile-error{
+  width: calc(100vw - 251px);
+}
 @media screen and (max-width:768px) {
     #sideBar{
         width: 60px;
+    }
+    .profile-error{
+      width: calc(100vw - 60px);
     }
     .hasSideBar{
         padding-left: 61px;

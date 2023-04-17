@@ -4,8 +4,8 @@
 <body>
     <x-navbar />
     <x-sidebar :element="$elemnt=0" />
-    <div id="profile" class="hasSideBar">
-        @if (session()->has('message'))
+    <div id="profile" class="hasSideBar" >
+        @if (isset($message))
             <x-alert :type="$type" :message="$message" />
         @endif
         <form id="edit-profile-form" action="{{route('edit-profile')}}" method="POST" class="d-flex flex-column align-items-center m-auto mt-5">
@@ -38,5 +38,6 @@
             <button type="submit" class="mb-2 mt-4">Save</button>
         </form>
     </div>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 </body>
 </html>
