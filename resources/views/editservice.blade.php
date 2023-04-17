@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <x-head :title="'Edit Service'"/>
+    <x-head :title="$service['title']"/>
 <body>
     <x-navbar />
     <x-sidebar :element="$elemnt=1" />
     <div id="dashboard-content" class="hasSideBar">
-        <h2 class="ms-5 mt-5">{{$service['title']}}</h2>
         <form class="p-5">
             <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="row mb-4">
+            <div class="row mb-4 d-flex flex-row align-items-end">
               <div class="col">
                 <div class="form-outline">
-                <label class="form-label MyLabels" for="form6Example1">Title</label>
+                  <label class="form-label MyLabels" for="form6Example1">Title</label>
                   <input type="text" class=" MyInputs edit-service-input" value="{{$service['title']}}">
                 </div>
               </div>
-              <div class="col">
-                <div class="form-outline">
-                    <label for="images" class="drop-container">
-                        <span class="MyLabels">Image</span>
-                        <br>
-                        <input type="file" id="image-upload" accept="image/*" class="mt-3">
-                      </label>
-                      
-                </div>
+              <div class="col d-flex flex-column align-items-end">
+                <img id="service-image-form" src="/images/new.jpg" alt="">
+                <label for="images" class="drop-container">
+                    <br>
+                    <input type="file" id="image-upload" accept="image/*" class="mt-3">
+                </label>
               </div>
             </div>
             <!-- Text input -->

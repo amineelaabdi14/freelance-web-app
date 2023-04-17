@@ -8,7 +8,7 @@ body::-webkit-scrollbar {
 }
 #LoginformContainer{
     background-color:#ffffff;
-    height: 400px;
+    height: 370px;
     width: 100%;
     /* min-width: 390px; */
     max-width: 500px;
@@ -122,6 +122,7 @@ button[name="signMeIn"],button[name="signMeUp"] {
 }
 .hasSideBar{
     padding-left: 251px;
+    margin-top: 60px;
 }
 @media screen and (max-width:768px) {
     #sideBar{
@@ -334,7 +335,7 @@ a:hover{
   }
 }
 #elements-container{
-  height: 80vh;
+  height: 100%;
 }
 #edit-profile-form{
   max-width: 500px;
@@ -395,4 +396,11 @@ a:hover{
   border: solid gray 1px;
   border-radius: 6px;
   width: 100%;
+}
+.add-service{
+  background-color: #0c5ca0;
+  color: white;
+}
+#service-image-form{
+  width: 300px;
 }

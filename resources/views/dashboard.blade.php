@@ -5,8 +5,15 @@
     <x-navbar />
     <x-sidebar :element="$elemnt=1" />
     <div id="dashboard-content" class="hasSideBar">
-        <h2 class="ms-5 mt-4 header">My Services :</h2>
+        <div class="d-flex justify-content-end mt-4">
+            <a href="/add-service" class="btn add-service mt-5 me-3">Add new service</a>
+        </div>
         <div class="d-flex flex-wrap">
+        @if(count($myServices)==0)
+        <div class="d-flex justify-content-center align-content-center" style="height:100vh;">
+            <img src="images/nodata1.png" alt="" style="width:30%;" class="m-auto">
+        </div>
+        @endif
         @foreach( $myServices as $service)
             <div class="card m-3" style="width: 18rem;">
                 <img class="card-img-top" src="/images/new.jpg" alt="Card image cap">

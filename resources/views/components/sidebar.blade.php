@@ -1,4 +1,4 @@
-<div id="sideBar" class="shadow-lg MyNavigation position-absolute start-0 d-flex flex-column justify-content-between"style="">
+<div id="sideBar" class="shadow-lg MyNavigation position-fixed start-0 d-flex flex-column justify-content-between"style="">
     <ul id="sideList" class="d-flex align-items-start flex-column p-0 ps-md-2">
         <li class="liLinks text-dark btn mb-3 mt-4 d-flex flex-column flex-md-row align-items-center" ><i class="fa-solid fa-user b- fs-5"></i><a href="/profile" class="ms-3 d-none d-md-inline fw-semibold ">Profile</a></li> 
 

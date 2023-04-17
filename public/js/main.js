@@ -40,7 +40,7 @@ function createAccount ()
     document.querySelector('a[onclick="createAccount()"]').setAttribute("onclick","alrMember()")
 
     fullName.innerHTML=`<label for="password" class="MyLabels">Password</label><br><input type="password" name="password" class="MyInputs">`;
-    document.getElementById('LoginformContainer').style.height="500px";   
+    document.getElementById('LoginformContainer').style.height="450px";   
 
 }
 function alrMember()
@@ -67,5 +67,5 @@ function alrMember()
 
     document.querySelector('a[onclick="alrMember()"]').setAttribute("onclick","createAccount()");
 
-    document.getElementById('LoginformContainer').style.height="400px";  
+    document.getElementById('LoginformContainer').style.height="370px";
 }

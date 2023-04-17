@@ -58,7 +58,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return response()->json(['message' => 'Registered and authenticated']);
+        return redirect()->intended('profile');
     }
     public function logout(Request $request)
     {
