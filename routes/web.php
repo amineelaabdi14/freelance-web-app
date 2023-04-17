@@ -21,8 +21,8 @@ use App\Models\Category;
 */
 
 Route::get('/', function () {
-    return view('authentication');
-})->name('authenticate')->middleware('guest');
+    return view('services');
+})->name('authenticate')->middleware('auth');
 
 
 

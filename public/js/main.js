@@ -69,3 +69,17 @@ function alrMember()
 
     document.getElementById('LoginformContainer').style.height="370px";
 }
+function getService($id){
+    let service=0;
+    var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                service = JSON.parse(this.responseText);
+                console.log(service);
+            }
+        };
+        xmlhttp.open("GET", "/getService/${id}" , false);
+        xmlhttp.send();
+        
+        
+}

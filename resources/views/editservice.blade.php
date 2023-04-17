@@ -46,7 +46,6 @@
               <label class="form-label MyLabels" for="form6Example7">Description</label>
               <textarea class=" edit-service-input ps-3 pt-2" id="form6Example7" rows="4">{{$service['description']}}</textarea>
             </div>
-          
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4">Save</button>
           </form>

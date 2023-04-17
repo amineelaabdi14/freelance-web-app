@@ -44,4 +44,8 @@ class ServiceController extends Controller
         }
         return response()->json($gig);
     }
+    public function getService($id){
+
+        return [response()->json(Service::find($id))];
+    }
 }

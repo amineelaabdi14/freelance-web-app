@@ -21,4 +21,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-service/{id}', function ($id) {
         return view('editservice',['service'=>Service::find($id),'categories'=> Category::all()]);
     })->name('profile.destroy');
+
+    Route::get('/getService/{id}',[ServiceController::class, 'getService']);
 });
