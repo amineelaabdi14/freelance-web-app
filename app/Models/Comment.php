@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Skill extends Model
+class Comment extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
         'user_id',
+        'service_id',
+        'comment'
     ];
-    public function user(){
-        return $this->belongesTo(User::class);
+    public function gig(){
+        return $this->belongesTo(Service::class);
     }
 }

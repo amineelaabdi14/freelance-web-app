@@ -14,9 +14,10 @@
     </a>
     
 </div>
+
 <script>
     let element= {{$element}};
-    document.querySelectorAll('li.liLinks')[element].style.backgroundColor="#038DFE";
+    document.querySelectorAll('li.liLinks')[element].style.backgroundColor="#0c5ca0";
     document.querySelectorAll('li.liLinks > i')[element].style.color="white";
     document.querySelectorAll('li.liLinks > a')[element].style.color="white";
 </script>

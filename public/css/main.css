@@ -58,7 +58,7 @@ body::-webkit-scrollbar {
 }
 
 button[name="signMeIn"],button[name="signMeUp"] {
-    background-color:#038DFE;
+    background-color:#0c5ca0;
     font-size: 16px;
     font-weight: bold;
     width: 118px;
@@ -69,15 +69,15 @@ button[name="signMeIn"],button[name="signMeUp"] {
     filter: saturate(0%);  
 }
 .logoContainer{
-    height: 70px;
-    width: 150px;
+    height: 40px;
+    width: 170px;
     display: block;
     margin: auto;           
     margin-bottom: 10px;
 }
 #whoAreWe {
     font-size: 2.5rem;
-    color:#038DFE;
+    color:#0c5ca0;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
 }
@@ -102,8 +102,8 @@ button[name="signMeIn"],button[name="signMeUp"] {
     }
 }
 #navLogo{
-    height: 65px;
-    width: 150px;
+    height: 40px;
+    width: 170px;
 }
 #slg{
     font-family: 'Open Sans', sans-serif;
@@ -113,7 +113,7 @@ button[name="signMeIn"],button[name="signMeUp"] {
 }
 #sideBar{
     width: 250px;
-    height: calc(100% - 85px);
+    height: calc(100% - 60px);
     /* height: 100vh; */
     padding: 0%;
     margin: 0%;
@@ -340,31 +340,59 @@ a:hover{
   max-width: 500px;
   border: solid rgb(163, 163, 163) 1px;
   border-radius: 6px;
-  height: 600px;
-}
-.edit-inputs{
-  background-color: white;
-  height: 40px;
-  border: none;
-  display: inline;
-  width: 60%;
-  font-family: 'Open Sans', sans-serif;
-}
-.edit-inputs:hover{
-  cursor: pointer;
-}
-.edit-inputs:focus{
-  outline: none;
-  color: gray;
+  height: 720px;
 }
 .edit-label{
   font-family: 'Open Sans', sans-serif;
-  color: rgb(25, 25, 25);
-  font-size: 17px;
+  color: #7c7c7c;
+  font-size: 15px;
   font-weight: bold;
 }
 #inputs-container{
     width: 100%;
     height: 300px;
     border: solid red;
+}
+#edit-profile-form button{
+  width: 94%;
+  height: 50px;
+  border-radius: 6px;
+  background-color:#0c5ca0;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0px;
+  color: white;
+}
+
+.delete-service{
+  border: solid 1px  #9E383A;
+  border-radius: 6px;
+  color: #9E383A;
+  height: 38px;
+  background-color: white;
+}
+.delete-service:hover {
+  background-color: #9E383A;
+  color: white;
+}
+.edit-service{
+  background-color: white;
+  color: #000000;
+  border: solid 1px #000000;
+}
+.edit-service:hover{
+  background-color: #000000;
+  color: white;
+}
+.header{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: rgb(52, 52, 52);
+}
+.edit-service-input{
+  background-color: white;
+  border: solid gray 1px;
+  border-radius: 6px;
+  width: 100%;
 }

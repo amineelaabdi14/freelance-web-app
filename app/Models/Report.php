@@ -11,10 +11,10 @@ class Report extends Model
 
     protected $fillable = [
         'user_id',
-        'gig_id',
+        'service_id',
         'message'
     ];
     public function gig(){
-        return $this->belongesTo(Gig::class);
+        return $this->belongesTo(Service::class);
     }
 }

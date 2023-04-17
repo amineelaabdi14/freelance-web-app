@@ -5,7 +5,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\EditProfileController;
-use App\Http\Controllers\GigController;
+use App\Http\Controllers\ServiceController;
+use App\Models\Service;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,27 +22,33 @@ use App\Http\Controllers\GigController;
 
 Route::get('/', function () {
     return view('authentication');
-});
+})->name('authenticate')->middleware('guest');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+    return view('dashboard',['myServices'=>Service::all()]);
+})->middleware('auth');
 
 Route::get('/profile', function (){
     return view('profile');
-});
+})->middleware('auth')->name('profile');
+
+Route::get('/edit-service/{id}', function ($id) {
+    return view('editservice',['service'=>Service::find($id),'categories'=> Category::all()]);
+})->middleware('auth');
+
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login')->name('login');
     Route::post('register', 'register')->name('register');
     Route::post('logout', 'logout');
-});
+})->middleware('guest');
 
-Route::controller(GigController::class)->group(function () {
-    Route::post('gig', 'create')->name('create-gig');
-    Route::put('gig', 'edit')->name('edit-gig');
-    Route::delete('gig/{id}', 'delete')->name('delete-gig');
-    Route::get('all-gigs', 'read');
-    Route::get('gig/{id}', 'select');
+
+Route::controller(ServiceController::class)->group(function () {
+    Route::post('service', 'create')->name('create-gig');
+    Route::put('service', 'edit')->name('edit-gig');
+    Route::delete('delete-service/{service}', 'delete')->name('delete-service');
+    Route::get('all-services', 'read');
+    Route::get('service/{id}', 'select');
 });
 
 Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');

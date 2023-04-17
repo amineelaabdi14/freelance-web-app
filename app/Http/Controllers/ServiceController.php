@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Gig;
+use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class GigController extends Controller
+class ServiceController extends Controller
 {
     //
     public function create(Request $req){
@@ -28,9 +28,9 @@ class GigController extends Controller
         return response()->json($gig);
     }
 
-    public function delete(Gig $gig){
-        $gig->delete();
-        return view('dashboard');
+    public function delete(Service $service){
+        $service->delete(); 
+        return redirect('dashboard');
     }
 
     public function read(){
