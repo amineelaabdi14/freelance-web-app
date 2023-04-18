@@ -20,6 +20,17 @@ use App\Models\Category;
 |
 */
 
+Route::get('/', function (){
+    return redirect ('/home');
+});
+
+Route::get('/home', function (){
+    return view ('services');
+});
+
+Route::get('/profile', function (){
+    return view('profile');
+})->middleware('auth')->name('profile');
 
 Route::get('/profile', function (){
     return view('profile');

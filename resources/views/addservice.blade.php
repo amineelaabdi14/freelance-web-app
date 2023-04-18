@@ -4,8 +4,8 @@
 <body>
     <x-navbar />
     <x-sidebar :element="$elemnt=1" />
-    <div id="dashboard-content" class="hasSideBar">
-        <form class="p-5">
+    <div id="dashboard-content" class="hasSideBar hasNavBar">
+        <form class="p-5 w-75 m-auto shadow-lg mt-5">
             <!-- 2 column grid layout with text inputs for the first and last names -->
             <div class="row mb-4 d-flex flex-row align-items-end">
               <div class="col">
