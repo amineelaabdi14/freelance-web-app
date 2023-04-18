@@ -16,9 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');
             $table->string('title');
-            $table->string('description');
-            $table->unsignedBigInteger('delivery_time');
-            $table->unsignedBigInteger('price');
+            $table->string('description');      
             $table->unsignedBigInteger('isActive');
             $table->string('image')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

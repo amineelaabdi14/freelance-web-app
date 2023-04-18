@@ -20,11 +20,6 @@ use App\Models\Category;
 |
 */
 
-Route::get('/', function () {
-    return view('services');
-})->name('authenticate')->middleware('guest');
-
-
 
 Route::get('/profile', function (){
     return view('profile');
