@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('gig_id');
+            $table->unsignedBigInteger('service_id');
             $table->string('message');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('gig_id')->references('id')->on('gigs');
+            $table->foreign('service_id')->references('id')->on('services');
             $table->timestamps();
         });
     }

@@ -53,13 +53,12 @@ class AuthController extends Controller
         $user = User::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
-            'password' => bcrypt($validatedData['password']),
-            'balance'=>0    
+            'password' => bcrypt($validatedData['password']),  
         ]);
 
         Auth::login($user);
 
-        return response()->json(['message' => 'Registered and authenticated']);
+        return redirect()->intended('profile');
     }
     public function logout(Request $request)
     {

@@ -12,8 +12,7 @@ class Certification extends Model
     protected $fillable = [
         'name',
         'user_id',
-        'starting_date',
-        'ending'
+        'earned_at',
     ];
     public function user(){
         return $this->belongesTo(User::class);
