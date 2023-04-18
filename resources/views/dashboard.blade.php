@@ -21,7 +21,7 @@
                   <h5 class="card-title">{{$service['title']}}</h5>
                   <p class="card-text">{{strlen($service['description'])>26 ? substr($service['description'],0,26)."..." :$service['description']}}</p>
                   <div class="d-flex flex-row justify-content-between">
-                    <a href="/edit-service/{{$service['id']}}" type="button" class="btn edit-service""><i class="fa-solid fa-pen"></i></a>
+                    <button type="button" class="btn edit-service" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="showEditervice({{$service['id']}})"><i class="fa-solid fa-pen"></i></botton>
                     <form class="d-inline" method="POST" action="{{ route('delete-service', $service) }}">
                         @csrf
                         @method('DELETE')
@@ -39,11 +39,28 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="service-modal-title"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                ...
+                    <form action="">
+                            <label class="form-label MyLabels" for="title">Title</label>
+                            <input id="edit-service-title" type="text" class=" MyInputs edit-service-input" value="" name="title">
+                            <div class="d-flex flex-row align-items-end justify-content-between">
+                            <div>
+                                <label for="price" class="form-label MyLabels" for="price">Price</label>
+                                <input id="edit-service-price" name="price" type="number" class="form-control MyInputs edit-service-input" name="price" value="" style="width: 100px;">
+                            </div>
+                            <input id="edit-service-image" name="image" type="file" id="image-upload" accept="image/*" class="mt-3">
+                        </div>
+                        <label for="category" class=" MyLabels" for="form6Example3">Category</label>
+                        <select id="edit-service-category" name="category" class="MyInputs edit-service-input">
+                        </select>
+                        <label for="delivery_time" class=" MyLabels" for="form6Example4">Delivery Time</label>
+                        <input id="edit-service-delivery_time" name="delivery_time" type="number" id="form6Example4" class="form-control MyInputs edit-service-input" value="">
+                        <label for="description" class="form-label MyLabels" for="form6Example7">Description</label>
+                        <textarea id="edit-service-description" name="description" class=" edit-service-input ps-3 pt-2" id="form6Example7" rows="4"></textarea>
+                    </form>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -55,9 +72,6 @@
 
 
     </div>
-    <script>
-        getService(2);
-    </script>
     
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 </body>

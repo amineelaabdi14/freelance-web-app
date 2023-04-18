@@ -69,17 +69,20 @@ function alrMember()
 
     document.getElementById('LoginformContainer').style.height="370px";
 }
-function getService($id){
-    let service=0;
-    var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                service = JSON.parse(this.responseText);
-                console.log(service);
-            }
-        };
-        xmlhttp.open("GET", "/getService/${id}" , false);
-        xmlhttp.send();
-        
-        
+async function getService(id) {
+      const response = await fetch(`/getService/${id}`);
+      const data = await response.json();
+      console.log(data[0].original);
+      return data[0].original;
+}
+
+
+async function showEditervice(service){
+    let data= await getService(service);
+    document.getElementById('edit-service-title').value=data.title;
+    document.getElementById('edit-service-price').value=data.title;
+    document.getElementById('edit-service-image').value=data.title;
+    document.getElementById('edit-service-category').value=data.title;
+    document.getElementById('edit-service-delivery_time').value=data.title;
+    document.getElementById('edit-service-description').value=data.title;
 }

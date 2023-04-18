@@ -47,5 +47,6 @@ class ServiceController extends Controller
     public function getService($id){
 
         return [response()->json(Service::find($id))];
+        // return response()->json(Service::all());
     }
 }
