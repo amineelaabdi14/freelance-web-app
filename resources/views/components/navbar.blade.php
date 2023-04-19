@@ -1,8 +1,8 @@
 <nav id="" class="navbar position-fixed top-0 w-100 shadow-lg   bg-white d-flex flex-column align-content-center pe-4">
     <div class="d-flex flex-row justify-content-between w-100">
-
-        <img id="navLogo" src="/images/logo.png" alt="service.ma" alt="" class="ms-4 mt-1 d-none d-sm-inline" >
-
+        <a href="{{route('home')}}">
+          <img id="navLogo" src="/images/logo.png" alt="service.ma" alt="" class="ms-4 mt-1 d-none d-sm-inline" >
+        </a>
         <div class="input-group d-flex flex-row align-content-center searchbar">
             <div class="form-outline ms-3" style="width:82%">
               <input type="search" id="form1" class="form-control" placeholder="Search in services" />

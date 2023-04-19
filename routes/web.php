@@ -24,7 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', function () {
         $services = Service::paginate(20);
         return view('services', compact('services'));
-    });
+    })->name('home');
 
     Route::get('/profile', function (){
         return view('profile');
