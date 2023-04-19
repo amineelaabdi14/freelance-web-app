@@ -69,7 +69,7 @@ button[name="signMeIn"],button[name="signMeUp"] {
     filter: saturate(0%);  
 }
 .logoContainer{
-    height: 40px;
+    height: 50px;
     width: 170px;
     display: block;
     margin: auto;           
@@ -378,23 +378,14 @@ a:hover{
 }
 
 .delete-service{
-  border: none;
-  color: #9E383A;
-  height: 38px;
-  background-color: white;
-}
-.delete-service:hover {
   border: solid 1px  #9E383A;
   border-radius: 6px;
   color: #9E383A;
 }
-.edit-service{
-  background-color: white;
-  color: #000000;
-}
-.edit-service:hover{
-  border: solid 1px #000000;
-  color: black;
+.delete-service:hover {
+  background-color: #9E383A;
+  height: 38px;
+  color: white;
 }
 .header{
   font-family: 'Open Sans', sans-serif;
@@ -432,4 +423,16 @@ a:hover{
 }
 .fs-8{
   font-size: 12px;
+}
+.myService-card{
+  max-width: 350px;
+  position: static;
+}
+#edit-add-form{
+  width: 50%;
+}
+@media screen and (max-width:1000px) {
+  #edit-add-form{
+    width: 90%;
+  }
 }

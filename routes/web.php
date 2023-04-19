@@ -20,27 +20,33 @@ use App\Models\Category;
 |
 */
 
-Route::get('/', function (){
-    return redirect ('/home');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        $services = Service::paginate(20);
+        return view('services', compact('services'));
+    });
+
+    Route::get('/profile', function (){
+        return view('profile');
+    })->name('profile');
 });
 
-Route::get('/home', function (){
-    return view ('services');
-});
+Route::get('/login', function (){
+    return view ('authentication');
+})->name('authenticate');
 
-Route::get('/profile', function (){
-    return view('profile');
-})->middleware('auth')->name('profile');
 
-Route::get('/profile', function (){
-    return view('profile');
-})->middleware('auth')->name('profile');
+// Route::controller(AuthController::class)->group(function () {
+//     Route::post('login', 'login')->name('login');
+//     Route::post('register', 'register')->name('register');
+//     Route::post('logout', 'logout');
+// })->middleware('guest');
 
-Route::controller(AuthController::class)->group(function () {
+Route::group(['middleware' => 'guest','controller'=>AuthController::class], function () {
     Route::post('login', 'login')->name('login');
     Route::post('register', 'register')->name('register');
     Route::post('logout', 'logout');
-})->middleware('guest');
+});
 
 
 Route::controller(ServiceController::class)->group(function () {

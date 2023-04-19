@@ -10,7 +10,7 @@
         @endif
         <form id="edit-profile-form" action="{{route('edit-profile')}}" method="POST" class="d-flex flex-column align-items-center m-auto mt-5">
             @csrf
-            <input type="hidden" name="_method" value="put" />
+            @method('PUT')
             <div class="d-flex justify-content-center mt-4">
                 <img id="editImage" src="images/defaultAvatar.jpg" alt="" class="rounded-circle" style="width:180px;height:180px;">
             </div>
