@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');
             $table->string('title');
-            $table->string('description');      
+            $table->text('description');      
             $table->unsignedBigInteger('isActive')->default(1);
             $table->unsignedBigInteger('delivery_time');
             $table->unsignedBigInteger('city_id');

@@ -33,20 +33,7 @@ class ServiceController extends Controller
         return redirect('/my-services');
     }
 
-    public function read(){
-        return response()->json(Gig::all());
-    }
-
-    public function select($id){
-        $gig=Gig::find($id);
-        if(!$gig){
-            return response()->json('service not found');
-        }
-        return response()->json($gig);
-    }
-    public function getService($id){
-
-        return [response()->json(Service::find($id))];
-        // return response()->json(Service::all());
+    public function showService(Service $service){
+        return view('service',['service'=>$service]);
     }
 }

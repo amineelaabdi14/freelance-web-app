@@ -30,5 +30,4 @@ Route::group(['middleware' => 'auth','controller'=>ServiceController::class], fu
     Route::put('service', 'edit')->name('edit-gig');
     Route::delete('delete-service/{service}', 'delete')->name('delete-service');
     Route::get('all-services', 'read');
-    Route::get('service/{id}', 'select');
 });

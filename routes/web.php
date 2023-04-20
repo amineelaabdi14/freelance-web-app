@@ -21,6 +21,7 @@ use App\Models\Category;
 */
 
 Route::group(['middleware' => 'auth'], function () {
+
     Route::get('/', function () {
         $services = Service::paginate(20);
         return view('services', compact('services'));
@@ -29,6 +30,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', function (){
         return view('profile');
     })->name('profile');
+
+    Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');
 });
 
 
@@ -41,6 +44,8 @@ Route::group(['middleware' => 'guest','controller'=>AuthController::class], func
     })->name('authenticate');
 });
 
+Route::get('/service/{service}',[ServiceController::class,'showService'])->name('show-service');
 
-Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');
+Route::get('/user/{user}',[UserController::class,'getUser'])->name('get-user');
+
 

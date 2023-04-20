@@ -21,7 +21,7 @@ class ServiceFactory extends Factory
             'user_id' => null,
             'category_id' => null,
             'title' => fake()->words(6, true),
-            'description' => fake()->words(20, true),
+            'description' => fake()->words(70, true),
             'delivery_time' => 2,
         ];
         // return [
