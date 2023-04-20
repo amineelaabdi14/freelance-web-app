@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('about')->nullable();
             $table->string('skills')->nullable();
             $table->string('phone')->nullable();
+            $table->unassignedBigIntiger('phone')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

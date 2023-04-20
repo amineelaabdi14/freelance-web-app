@@ -69,7 +69,7 @@ button[name="signMeIn"],button[name="signMeUp"] {
     filter: saturate(0%);  
 }
 .logoContainer{
-    height: 40px;
+    height: 50px;
     width: 170px;
     display: block;
     margin: auto;           
@@ -102,7 +102,7 @@ button[name="signMeIn"],button[name="signMeUp"] {
     }
 }
 #navLogo{
-    height: 40px;
+    height: 50px;
     width: 170px;
 }
 #slg{
@@ -112,8 +112,8 @@ button[name="signMeIn"],button[name="signMeUp"] {
     text-align: center;
 }
 #sideBar{
-    width: 250px;
-    height: calc(100% - 60px);
+    width: 210px;
+    height: calc(100% - 125px);
     /* height: 100vh; */
     padding: 0%;
     margin: 0%;
@@ -121,8 +121,10 @@ button[name="signMeIn"],button[name="signMeUp"] {
     overflow-y:hidden ;
 }
 .hasSideBar{
-    padding-left: 251px;
-    margin-top: 60px;
+    padding-left: 220px;
+}
+.hasNavBar{
+  padding-top: 126px;
 }
 .profile-error{
   width: calc(100vw - 251px);
@@ -130,12 +132,16 @@ button[name="signMeIn"],button[name="signMeUp"] {
 @media screen and (max-width:768px) {
     #sideBar{
         width: 60px;
+        height:calc(100% - 115px);
     }
     .profile-error{
       width: calc(100vw - 60px);
     }
     .hasSideBar{
         padding-left: 61px;
+    }
+    .hasNavBar{
+      padding-top: 115px;
     }
 }
 #signOutBtn>div{
@@ -375,20 +381,10 @@ a:hover{
   border: solid 1px  #9E383A;
   border-radius: 6px;
   color: #9E383A;
-  height: 38px;
-  background-color: white;
 }
 .delete-service:hover {
   background-color: #9E383A;
-  color: white;
-}
-.edit-service{
-  background-color: white;
-  color: #000000;
-  border: solid 1px #000000;
-}
-.edit-service:hover{
-  background-color: #000000;
+  height: 38px;
   color: white;
 }
 .header{
@@ -409,4 +405,34 @@ a:hover{
 }
 #service-image-form{
   width: 300px;
+}
+.navbar-category{
+  font-family: 'Open Sans', sans-serif;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+.navbar-category ul{
+  min-width: 1400px;
+}
+.navbar-category::-webkit-scrollbar {
+  display: none;
+}
+.searchbar{
+  min-width: 350px;
+  max-width:763px
+}
+.fs-8{
+  font-size: 12px;
+}
+.myService-card{
+  max-width: 350px;
+  position: static;
+}
+#edit-add-form{
+  width: 50%;
+}
+@media screen and (max-width:1000px) {
+  #edit-add-form{
+    width: 90%;
+  }
 }

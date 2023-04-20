@@ -4,22 +4,22 @@
 <body>
     <x-navbar />
     <x-sidebar :element="$elemnt=1" />
-    <div id="dashboard-content" class="hasSideBar">
-        <form class="p-5">
+    <div id="dashboard-content" class="hasSideBar hasNavBar">
+      <div id="edit-add-form" class="p-5 w-lg-50 m-auto shadow-lg mt-5 rounded-2" style="border:solid #dfdfdf 0.5px">
+        <form class="" action="{{route('edit-service')}}">
+          @csrf
+          @method('put')
+          <div class="d-flex justify-content-center">
+            <img id="service-image-form" src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="w-100 rounded-1">
+          </div>
+            <input type="file" class="form-control my-4" id="image-upload" />
             <!-- 2 column grid layout with text inputs for the first and last names -->
             <div class="row mb-4 d-flex flex-lg-row flex-column-reverse align-items-end">
-              <div class="col">
                 <div class="form-outline">
                   <label class="form-label MyLabels" for="form6Example1">Title</label>
                   <input type="text" class=" MyInputs edit-service-input" value="{{$service['title']}}">
                 </div>
-              </div>
               <div class="col d-flex flex-column align-items-end">
-                <img id="service-image-form" src="/images/new.jpg" alt="">
-                <label for="images" class="drop-container">
-                    <br>
-                    <input type="file" id="image-upload" accept="image/*" class="mt-3">
-                </label>
               </div>
             </div>
             <!-- Text input -->
@@ -48,7 +48,13 @@
             </div>
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4">Save</button>
-          </form>
+            </form>
+            <form class="d-inline" method="POST" action="{{ route('delete-service', $service) }}">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="delete-service" style="height:37px">Disable this service</button>
+            </form>
+          </div>
     </div>
 </body>
 </html>

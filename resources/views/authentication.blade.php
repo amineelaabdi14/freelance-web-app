@@ -5,7 +5,7 @@
 
     <x-navbar />
 
-    <div id="elements-container" class="d-flex flex-column-reverse flex-lg-row align-items-center justify-content-lg-around w-100 mt-5">
+    <div id="elements-container" class="d-flex flex-column-reverse flex-lg-row align-items-center justify-content-lg-around w-100 mt-5 hasNavBar">
 
         <div id="first-container">
             <img src="images/landing.png" id="landing-logo" alt="Freelancer.ma" class="mt-4">
