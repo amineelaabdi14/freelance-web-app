@@ -21,10 +21,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'skills',
         'about',
-        'balance',
-        'rating'
+        'city',
+        'image',
+        'phone',
+        'birthday',
     ];
 
     /**
@@ -47,11 +48,5 @@ class User extends Authenticatable
     ];
     public function gigs(){
         return $this->hasMany(Gig::class);
-    }
-    public function educations(){
-        return $this->hasMany(Certification::class);
-    }
-    public function skills(){
-        return $this->hasMany(Skill::class);
     }
 }

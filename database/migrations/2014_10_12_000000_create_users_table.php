@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->unsignedBigInteger('city');
             $table->string('image')->nullable();
             $table->date('birthday')->nullable();
             $table->string('password');
             $table->string('about')->nullable();
-            $table->string('skills')->nullable();
             $table->string('phone')->nullable();
             $table->rememberToken();
             $table->timestamps();
