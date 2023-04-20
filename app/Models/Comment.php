@@ -16,4 +16,7 @@ class Comment extends Model
     public function gig(){
         return $this->belongesTo(Service::class);
     }
+    public function user(){
+        return $this->belongesTo(User::class);
+    }
 }

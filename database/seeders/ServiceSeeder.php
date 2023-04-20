@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Service;
 use App\Models\Category;
+use App\Models\City;
 
 class ServiceSeeder extends Seeder
 {
@@ -17,9 +18,10 @@ class ServiceSeeder extends Seeder
     {
         $users=User::all();
         $categories=Category::all();
+        $cities=City::all();
         foreach($users as $user){
             foreach($categories as $category){
-                Service::factory()->create(['user_id' => $user->id,"category_id"=>$category->id]);
+                Service::factory()->create(['user_id' => $user->id,"category_id"=>$category->id ,"city_id"=>280]);
             }
         }
     }

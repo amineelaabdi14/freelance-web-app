@@ -14,10 +14,10 @@ class Service extends Model
         'user_id',
         'category_id',
         'description',
-        'price',
         'isActive',
         'image',
-        'delivery_time'
+        'delivery_time',
+        'city_id'
     ];
 
     public function user(){

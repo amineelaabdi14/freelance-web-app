@@ -17,10 +17,13 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('title');
             $table->string('description');      
-            $table->unsignedBigInteger('isActive');
+            $table->unsignedBigInteger('isActive')->default(1);
+            $table->unsignedBigInteger('delivery_time');
+            $table->unsignedBigInteger('city_id');
             $table->string('image')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('city_id')->references('id')->on('cities');
             $table->timestamps();
         });
     }

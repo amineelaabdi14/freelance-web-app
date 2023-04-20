@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->unsignedBigInteger('city');
+            $table->unsignedBigInteger('city_id')->nullable();
             $table->string('image')->nullable();
             $table->date('birthday')->nullable();
             $table->string('password');
             $table->string('about')->nullable();
             $table->string('phone')->nullable();
-            $table->unassignedBigIntiger('phone')->nullable();
+            $table->foreign('city_id')->references('id')->on('cities');
             $table->rememberToken();
             $table->timestamps();
         });

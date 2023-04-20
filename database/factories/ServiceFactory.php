@@ -22,7 +22,7 @@ class ServiceFactory extends Factory
             'category_id' => null,
             'title' => fake()->words(6, true),
             'description' => fake()->words(20, true),
-            'isActive' => 1,
+            'delivery_time' => 2,
         ];
         // return [
         //     '' => fake()->name(),

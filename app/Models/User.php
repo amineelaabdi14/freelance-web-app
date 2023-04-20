@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'about',
-        'city',
+        'city_id',
         'image',
         'phone',
         'birthday',
@@ -48,5 +48,14 @@ class User extends Authenticatable
     ];
     public function gigs(){
         return $this->hasMany(Gig::class);
+    }
+    public function city(){
+        return $this->belongesTo(City::class);
+    }
+    public function review(){
+        return $this->hasMany(Review::class);
+    }
+    public function comment(){
+        return $this->hasMany(Comment::class);
     }
 }
