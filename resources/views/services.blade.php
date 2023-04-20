@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$service['title']}}</h5>
                     <p class="card-text">
-                        {{$service['description']}}
+                        {{strlen($service['description'])>60 ? substr($service['description'] ,0,60)."...": $service['description']}}
                     </p>
                 </div>
                 </div>

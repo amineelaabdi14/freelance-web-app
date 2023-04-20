@@ -2,7 +2,7 @@
     <ul id="sideList" class="d-flex align-items-start flex-column p-0 ps-md-2">
         <li class="liLinks text-dark btn mb-3 mt-4 d-flex flex-column flex-md-row align-items-center" ><i class="fa-solid fa-user b- fs-5"></i><a href="/profile" class="ms-3 d-none d-md-inline fw-semibold ">Profile</a></li> 
 
-        <li class="liLinks text-dark btn mb-3 mt-1 d-flex flex-column flex-md-row align-items-center "><i class="fa-solid fa-people-arrows fs-5"></i><a href="/dashboard" class="ms-3 d-none d-md-inline fw-semibold ">My Services</a></li> 
+        <li class="liLinks text-dark btn mb-3 mt-1 d-flex flex-column flex-md-row align-items-center "><i class="fa-solid fa-people-arrows fs-5"></i><a href="/my-services" class="ms-3 d-none d-md-inline fw-semibold ">My Services</a></li> 
     </ul>
     <a id="signOutBtn" href="includes/signout.php?signout=1" class="d-block">
         <div class=" setRedColor d-flex flex-column flex-md-row justify-content-center align-items-center mb-5">

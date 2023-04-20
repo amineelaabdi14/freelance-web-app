@@ -10,17 +10,25 @@ use App\Models\Category;
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/dashboard', function () {
-        return view('dashboard',['myServices'=>Service::all()]);
-    })->name('profile.edit');
+    Route::get('/my-services', function () {
+        return view('myservices',['myServices'=>Service::all()]);
+    });
 
     Route::get('/add-service', function () {
         return view('addservice',['categories'=>Category::all()]);
-    })->name('profile.update');
+    });
 
     Route::get('/edit-service/{id}', function ($id) {
         return view('editservice',['service'=>Service::find($id),'categories'=> Category::all()]);
-    })->name('profile.destroy');
+    });
 
     Route::get('/getService/{id}',[ServiceController::class, 'getService']);
+});
+
+Route::group(['middleware' => 'auth','controller'=>ServiceController::class], function () {
+    Route::post('service', 'create')->name('add-service');
+    Route::put('service', 'edit')->name('edit-gig');
+    Route::delete('delete-service/{service}', 'delete')->name('delete-service');
+    Route::get('all-services', 'read');
+    Route::get('service/{id}', 'select');
 });

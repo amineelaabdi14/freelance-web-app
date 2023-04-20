@@ -6,7 +6,9 @@
     <x-sidebar :element="$elemnt=1" />
     <div id="dashboard-content" class="hasSideBar hasNavBar">
       <div id="edit-add-form" class="p-5 w-lg-50 m-auto shadow-lg mt-5 rounded-2" style="border:solid #dfdfdf 0.5px">
-        <form class="">
+        <form class="" action="{{route('edit-service')}}">
+          @csrf
+          @method('put')
           <div class="d-flex justify-content-center">
             <img id="service-image-form" src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="w-100 rounded-1">
           </div>

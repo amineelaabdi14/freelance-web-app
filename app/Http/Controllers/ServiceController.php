@@ -30,7 +30,7 @@ class ServiceController extends Controller
 
     public function delete(Service $service){
         $service->delete(); 
-        return redirect('dashboard');
+        return redirect('/my-services');
     }
 
     public function read(){
@@ -40,7 +40,7 @@ class ServiceController extends Controller
     public function select($id){
         $gig=Gig::find($id);
         if(!$gig){
-            return response()->json('gig not found');
+            return response()->json('service not found');
         }
         return response()->json($gig);
     }
