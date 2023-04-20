@@ -23,6 +23,9 @@ class Service extends Model
     public function user(){
         return $this->belongesTo(User::class);
     }
+    public function city(){
+        return $this->belongesTo(City::class);
+    }
     public function category(){
         return $this->belongesTo(Category::class);
     }
