@@ -451,7 +451,27 @@ a:hover{
 #service-infos-container{
    max-width: 600px;
 }
-#add-comment-form{
-  height: 40px;
-  min-width: 918px;
+#comment-input{
+  height: 80px;
+}
+#profile-page > div {
+  width: 100%;
+  max-width: 450px;
+}
+#profile-infos{
+  font-size: 15px;
+  color: rgb(167, 167, 167);
+}
+.myIcon{
+  font-size: 13px;
+  margin-right: 10px;
+}
+#profile-services{
+  min-width: 70%;
+}
+.become_seller_input{
+  height: 50px;
+}
+#become_a_seller_form{
+  max-width: 600px;
 }

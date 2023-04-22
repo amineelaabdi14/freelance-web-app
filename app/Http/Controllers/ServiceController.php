@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Service;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class ServiceController extends Controller
         return response()->json($gig);
     }
 
-    public function edit(Request $req){
+    public function edit(Service $service){
         $gig=Gig::find($req->id);
         $gig->category_id=$req->category_id;
         $gig->title=$req->title;
@@ -35,5 +36,8 @@ class ServiceController extends Controller
 
     public function showService(Service $service){
         return view('service',['service'=>$service]);
+    }
+    public function getEditService(Service $service){
+        return view('editservice',['categories'=>Category::all(),'service'=>$service]);
     }
 }

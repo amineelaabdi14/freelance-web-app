@@ -16,8 +16,8 @@ class Service extends Model
         'description',
         'isActive',
         'image',
-        'delivery_time',
-        'city_id'
+        'work_time',
+        'city_id',
     ];
 
     public function user(){

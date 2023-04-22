@@ -14,11 +14,11 @@
                         <h2 class="mb-0 fs-4">
                             {{ $service['title'] }}
                         </h2>
-                        <button class="border-0">
-                            <i class="fa-sharp fa-solid fa-flag"></i>
+                        <button class="border-0 bg-white">
+                            <i class="fa-sharp fa-solid fa-flag bg-white"></i>
                         </button>
                     </div>
-                    <a href="{{route('get-user',$service->user)}}" class="text-decoration-underline">
+                    <a href="{{route('get-user',$service->user)}}" target="_blank" class="text-decoration-underline">
                         {{ $service->user->name }}
                     </a>
                 </div>
@@ -27,8 +27,8 @@
                         {{$service['description']}}
                     </span>
                 </div>
-                <div class="d-flex flex-row justify-content-between w-100 mt-4">
-                    <span><strong>2 day(s) of work</strong></span>
+                <strong class="fs-4">{{$service['price']}} MAD / {{$service['work_time']}} </strong>
+                <div class="d-flex flex-row justify-content-start w-100 mt-4">
                     <button class="btn btn-primary ">Chat</button>
                 </div>
             </div>
@@ -73,9 +73,11 @@
                         <hr class="my-0" />
                       </div>
                     </div>
-                    <form id="add-comment-form" action="" class="w-75 d-flex flex-row justify-content-around mt-5">
-                        <textarea name="" id="" cols="30" rows="10" class="w-75 ps-2 border border-1 border-secondary rounded-1" placeholder="Enter your comment"></textarea>
-                        <button class="btn btn-primary">Comment</button>
+                    <form id="add-comment-form" action="" class="w-100 m-auto d-flex flex-column  align-items-center mt-5">
+                      <div class=" w-75">
+                        <textarea name="" id="comment-input" cols="30" rows="10" class="w-75 ps-2 border border-1 border-secondary rounded-1 w-100" placeholder="Enter your comment"></textarea>
+                        <button class="btn btn-primary mt-4" style="width: 100px">Comment</button>
+                      </div>
                     </form>
                   </div>
             </div>

@@ -86,3 +86,5 @@ async function showEditervice(service){
     document.getElementById('edit-service-delivery_time').value=data.title;
     document.getElementById('edit-service-description').value=data.title;
 }
+
+

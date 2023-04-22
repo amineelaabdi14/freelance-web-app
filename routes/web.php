@@ -8,6 +8,8 @@ use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Models\Service;
 use App\Models\Category;
+use App\Models\User;
+use App\Models\City;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +48,12 @@ Route::group(['middleware' => 'guest','controller'=>AuthController::class], func
 
 Route::get('/service/{service}',[ServiceController::class,'showService'])->name('show-service');
 
-Route::get('/user/{user}',[UserController::class,'getUser'])->name('get-user');
+Route::get('/user/{user}',function(User $user){
+    return view('user',['user'=>$user]);
+})->name('get-user');
+
+Route::get('/become-a-seller',function(){
+    return view('becomeaseller',['cities'=>City::all()]);
+});
 
 
