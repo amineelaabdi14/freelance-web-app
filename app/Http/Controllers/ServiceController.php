@@ -40,4 +40,13 @@ class ServiceController extends Controller
     public function getEditService(Service $service){
         return view('editservice',['categories'=>Category::all(),'service'=>$service]);
     }
+    public function search(Request $request) {
+        $searchKeyword=$request->search;
+        $services = Service::whereHas('user', function($query) use ($searchKeyword) {
+            $query->where('job_title', 'like', "%$searchKeyword%");
+        })
+        ->orwhere('title', 'like', "%$searchKeyword%")
+        ->paginate(20);
+        return view('services', compact('services'));
+    }
 }

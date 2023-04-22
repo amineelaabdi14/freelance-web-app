@@ -1,17 +1,18 @@
 function validateEmail() {
     
     let email=document.querySelector('input[name=email]').value;
-    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;console.log(document.getElementById('login-btn'))
     if(email.match(pattern))
     {    
+        
         emailError.innerText="";
-        document.querySelector('button[type=submit]').disabled=false;
-        document.querySelector('button[type=submit]').style.filter="saturate(100%)";
+        document.getElementById('login-btn').disabled=false;
+        document.getElementById('login-btn').style.filter="saturate(100%)";
     }
    else
    {
-        document.querySelector('button[type=submit]').disabled=true;
-        document.querySelector('button[type=submit]').style.filter="saturate(0%)";
+        document.getElementById('login-btn').disabled=true;
+        document.getElementById('login-btn').style.filter="saturate(0%)";
         emailError.innerText="The email address format is incorrect";
    }
     
