@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Report;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -48,5 +49,9 @@ class ServiceController extends Controller
         ->orwhere('title', 'like', "%$searchKeyword%")
         ->paginate(20);
         return view('services', compact('services'));
+    }
+    public function report(Request $req,$id){
+        Report::create(['user_id'=>auth()->user()->id,'service_id'=>$id,'message'=>$req->reportMessage]);
+        return redirect('service/'.$id);
     }
 }

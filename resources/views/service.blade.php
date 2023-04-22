@@ -86,13 +86,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="">
+            <form action="{{route('report-service',$service['id'])}}" method="post">
+              @csrf
               <label for="" class="MyLabels">Report message</label>
-              <textarea name="" id="" cols="20" rows="5" class="edit-service-input ps-3 pt-2"></textarea>
+              <textarea name="reportMessage" id="" cols="20" rows="5" class="edit-service-input ps-3 pt-2"></textarea>
+              <button type="submit" class="btn btn-danger">Submit</button>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger">Submit</button>
           </div>
         </div>
       </div>
