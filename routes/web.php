@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
     })->name('profile');
 
     Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');
+    Route::post('report/{id}',[ServiceController::class,'report'])->name('report-service');
 });
 
 
