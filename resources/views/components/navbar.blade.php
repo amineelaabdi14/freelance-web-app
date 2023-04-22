@@ -3,14 +3,15 @@
         <a href="{{route('home')}}">
           <img id="navLogo" src="/images/logo.png" alt="service.ma" alt="" class="ms-4 mt-1 d-none d-sm-inline" >
         </a>
-        <div class="input-group d-flex flex-row align-content-center searchbar">
+        <form action="{{route('search')}}" method="post" class="input-group d-flex flex-row align-content-center searchbar">
+          @csrf
             <div class="form-outline ms-3" style="width:82%">
-              <input type="search" id="form1" class="form-control" placeholder="Search in services" />
+          <input type="search" id="form1" class="form-control" placeholder="Search in services" name="search" />
             </div>
-            <button type="button" class="btn">
+            <button type="submit" class="btn">
               <i class="fas fa-search"></i>
             </button>
-          </div>
+          </form>
 
         <div class="dropdown me-2">
           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,6 +30,5 @@
           @endforeach
         </ul>
       </div>
-      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </nav>

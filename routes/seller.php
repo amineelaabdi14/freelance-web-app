@@ -11,7 +11,7 @@ use App\Models\Category;
 Route::middleware('auth')->group(function () {
 
     Route::get('/my-services', function () {
-        return view('myservices',['myServices'=>Service::all()]);
+        return view('myservices',['myServices'=>auth()->user()->service()]);
     });
 
     Route::get('/add-service', function () {

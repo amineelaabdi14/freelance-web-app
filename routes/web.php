@@ -21,13 +21,9 @@ use App\Models\City;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/',[ServiceController::class,'search'])->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
-
-    Route::get('/', function () {
-        $services = Service::paginate(20);
-        return view('services', compact('services'));
-    })->name('home');
 
     Route::get('/profile', function (){
         return view('profile');
@@ -55,5 +51,7 @@ Route::get('/user/{user}',function(User $user){
 Route::get('/become-a-seller',function(){
     return view('becomeaseller',['cities'=>City::all()]);
 });
+
+Route::post('/search',[ServiceController::class,'search'])->name('search');
 
 

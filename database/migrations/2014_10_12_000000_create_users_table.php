@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->unsignedBigInteger('city_id')->nullable();
             $table->string('image')->nullable();
+            $table->string('job_title')->nullable();
             $table->date('birthday')->nullable();
             $table->string('password');
             $table->string('about')->nullable();
