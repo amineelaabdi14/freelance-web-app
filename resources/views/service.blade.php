@@ -14,7 +14,7 @@
                         <h2 class="mb-0 fs-4">
                             {{ $service['title'] }}
                         </h2>
-                        <button class="border-0 bg-white">
+                        <button class="border-0 bg-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fa-sharp fa-solid fa-flag bg-white"></i>
                         </button>
                     </div>
@@ -34,14 +34,6 @@
             </div>
         </div>
         <div id="comments-section" class="m-auto mt-5 mb-5" style="width:85%;">
-            {{-- <h3>Comments</h3>
-            <div class="article-comment d-flex flex-row justify-content-start align-items-end">
-                <img src="/images/defaultAvatar.jpg" class="rounded-circle" alt="" style="width:50px;height:50px;">
-                <div>
-                    <h6 class="comment-user text-decoration-underline mb-3"><a href="">Mohamed Amine El Aabdi</a></h6>
-                    <span class="text-secondary fs-7">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</span>
-                </div>
-            </div> --}}
                 <div class="container my-5 py-5">
                   <div class="row d-flex justify-content-center">
                     <div class="col-md-12 col-lg-10">
@@ -84,5 +76,26 @@
         </div>
     </div>
     <x-footer />
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Submit a report</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <label for="" class="MyLabels">Report message</label>
+              <textarea name="" id="" cols="20" rows="5" class="edit-service-input ps-3 pt-2"></textarea>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

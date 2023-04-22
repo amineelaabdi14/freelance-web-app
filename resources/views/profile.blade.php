@@ -38,6 +38,5 @@
             <button type="submit" class="mb-2 mt-4">Save</button>
         </form>
     </div>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 </body>
 </html>
