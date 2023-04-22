@@ -15,14 +15,11 @@
         </div>
         @endif
         @foreach( $myServices as $service)
-            <a href="/edit-service/{{$service['id']}}" class="m-3 card h-70 myService-card" style="width: 18rem;">
+            <a href="{{route('get-edit-service',$service)}}" class="m-3 card h-70 myService-card" style="width: 18rem;">
                 <img class="card-img-top" src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{$service['title']}}</h5>
                   <p class="card-text">{{strlen($service['description'])>26 ? substr($service['description'],0,26)."..." :$service['description']}}</p>
-                  <div class="d-flex flex-row justify-content-between">
-                    {{-- <a href="/edit-service/{{$service['id']}}" class="btn edit-service"><i class="fa-solid fa-pen fs-8"></i></a> --}}
-                  </div>
                 </div>
             </a>
         @endforeach

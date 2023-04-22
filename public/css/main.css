@@ -6,6 +6,9 @@ body{
 body::-webkit-scrollbar {
   display: none;
 }
+*{
+  font-family: 'Open Sans', sans-serif;
+}
 #LoginformContainer{
     background-color:#ffffff;
     height: 370px;
@@ -125,6 +128,7 @@ button[name="signMeIn"],button[name="signMeUp"] {
 }
 .hasNavBar{
   padding-top: 126px;
+  min-height: 500px;
 }
 .profile-error{
   width: calc(100vw - 251px);
@@ -435,4 +439,39 @@ a:hover{
   #edit-add-form{
     width: 90%;
   }
+}
+#service-page-image{
+  max-width: 600px;
+  min-width: 350px;
+}
+#sercive-page-description{
+  min-height:150px;
+  width: 90%;
+}
+#service-infos-container{
+   max-width: 600px;
+}
+#comment-input{
+  height: 80px;
+}
+#profile-page > div {
+  width: 100%;
+  max-width: 450px;
+}
+#profile-infos{
+  font-size: 15px;
+  color: rgb(167, 167, 167);
+}
+.myIcon{
+  font-size: 13px;
+  margin-right: 10px;
+}
+#profile-services{
+  min-width: 70%;
+}
+.become_seller_input{
+  height: 50px;
+}
+#become_a_seller_form{
+  max-width: 600px;
 }

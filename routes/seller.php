@@ -18,17 +18,14 @@ Route::middleware('auth')->group(function () {
         return view('addservice',['categories'=>Category::all()]);
     });
 
-    Route::get('/edit-service/{id}', function ($id) {
-        return view('editservice',['service'=>Service::find($id),'categories'=> Category::all()]);
-    });
+    Route::get('/edit-service/{service}',[ServiceController::class,'getEditService'])->name('get-edit-service');
 
     Route::get('/getService/{id}',[ServiceController::class, 'getService']);
 });
 
 Route::group(['middleware' => 'auth','controller'=>ServiceController::class], function () {
     Route::post('service', 'create')->name('add-service');
-    Route::put('service', 'edit')->name('edit-gig');
+    Route::put('service', 'edit')->name('edit-service');
     Route::delete('delete-service/{service}', 'delete')->name('delete-service');
     Route::get('all-services', 'read');
-    Route::get('service/{id}', 'select');
 });

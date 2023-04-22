@@ -31,9 +31,20 @@
                 </div>
               
                 <!-- Text input -->
-                <div class="form-outline mb-4">
-                  <label class=" MyLabels" for="form6Example4">Delivery Time</label>
-                  <input type="number" id="form6Example4" class="form-control MyInputs edit-service-input" value="">
+                <div class="form-outline mb-4 d-flex flex-row justify-content-start">
+                  <div class="w-25">
+                    <label class=" MyLabels" for="form6Example4">Price</label>
+                    <input type="number" id="form6Example4" class="form-control MyInputs edit-service-input" value="">
+                  </div>
+                  
+                  <div class="w-50 ms-5 d-flex flex-row align-items-end">
+                    <label class=" MyLabels" for="form6Example4">Per</label>
+                    <select name="" id="" class="ms-4 MyInputs edit-service-input">
+                          <option value="4">dddd</option>
+                          <option value="4">dddd</option>
+                          <option value="4">dddd</option>
+                  </select>
+                  </div>
                 </div>
                 <!-- Message input -->
                 <div class="form-outline mb-4">
@@ -41,7 +52,7 @@
                   <textarea class=" edit-service-input ps-3 pt-2" id="form6Example7" rows="4"></textarea>
                 </div>
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">Save</button>
+                <button type="submit" class="btn btn-primary btn-block  w-100" style="background-color: rgb(12, 92, 160);">Save</button>
                 </form>
               </div>
         </div>

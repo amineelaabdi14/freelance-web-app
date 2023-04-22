@@ -8,6 +8,8 @@ use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Models\Service;
 use App\Models\Category;
+use App\Models\User;
+use App\Models\City;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,7 @@ use App\Models\Category;
 */
 
 Route::group(['middleware' => 'auth'], function () {
+
     Route::get('/', function () {
         $services = Service::paginate(20);
         return view('services', compact('services'));
@@ -29,6 +32,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', function (){
         return view('profile');
     })->name('profile');
+
+    Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');
 });
 
 
@@ -41,6 +46,14 @@ Route::group(['middleware' => 'guest','controller'=>AuthController::class], func
     })->name('authenticate');
 });
 
+Route::get('/service/{service}',[ServiceController::class,'showService'])->name('show-service');
 
-Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');
+Route::get('/user/{user}',function(User $user){
+    return view('user',['user'=>$user]);
+})->name('get-user');
+
+Route::get('/become-a-seller',function(){
+    return view('becomeaseller',['cities'=>City::all()]);
+});
+
 

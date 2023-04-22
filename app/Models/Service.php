@@ -16,18 +16,18 @@ class Service extends Model
         'description',
         'isActive',
         'image',
-        'delivery_time',
-        'city_id'
+        'work_time',
+        'city_id',
     ];
 
     public function user(){
-        return $this->belongesTo(User::class);
+        return $this->belongsTo(User::class);
     }
     public function city(){
-        return $this->belongesTo(City::class);
+        return $this->belongsTo(City::class);
     }
     public function category(){
-        return $this->belongesTo(Category::class);
+        return $this->belongsTo(Category::class);
     }
     public function reviews(){
         return $this->hasMany(Comment::class);

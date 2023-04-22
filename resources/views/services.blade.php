@@ -9,7 +9,7 @@
         </div>
         <div class=" px-5 py-3 w-100 d-flex flex-wrap justify-content-around">
         @foreach ($services as $service)
-            <a href="" class="d-flex justify-content-center flex-col mb-4">
+            <a href="{{route('show-service',$service)}}" class="d-flex justify-content-center flex-col mb-4">
                 <div class="card h-70 myService-card">
                 <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
                     alt="Hollywood Sign on The Hill" />
