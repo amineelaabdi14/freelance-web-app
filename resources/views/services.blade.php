@@ -27,27 +27,7 @@
             @endforeach
         </div>
 
-        <div>
-            <ul class="pagination d-flex flex-row justify-content-center">
-                <li class="page-item {{ $services->onFirstPage() ? 'disabled' : '' }}">
-                    <a class="page-link" href="{{ $services->previousPageUrl() }}" rel="prev">
-                        Previous
-                    </a>
-                </li>
-            
-                @foreach ($services->getUrlRange(1, $services->lastPage()) as $page => $url)
-                    <li class="page-item {{ $page === $services->currentPage() ? 'active' : '' }}">
-                        <a class="page-link" href="{{ $url }}">{{ $page }}</a>
-                    </li>
-                @endforeach
-            
-                <li class="page-item {{ $services->hasMorePages() ? '' : 'disabled' }}">
-                    <a class="page-link" href="{{ $services->nextPageUrl() }}" rel="next">
-                        Next
-                    </a>
-                </li>
-            </ul>
-        </div>
+        {{$services->links()}}
 
     </div>
 </body>

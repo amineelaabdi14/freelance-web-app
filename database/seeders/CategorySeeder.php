@@ -25,7 +25,7 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         foreach($this->categories as $category){
-            Category::create(['name'=>$category]);
+            Category::create(['name'=>$category,'updated_at' => null,'created_at' => date('now'),]);
         }
     }
 }

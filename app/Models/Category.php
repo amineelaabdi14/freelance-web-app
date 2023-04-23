@@ -13,7 +13,7 @@ class Category extends Model
         'name',
     ];
 
-    public function gigs(){
-        return $this->hasMany(Gig::class);
+    public function service(){
+        return $this->hasMany(Service::class);
     }
 }

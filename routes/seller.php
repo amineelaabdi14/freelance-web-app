@@ -7,15 +7,16 @@ use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Models\Service;
 use App\Models\Category;
+use App\Models\City;
 
 Route::middleware('auth')->group(function () {
 
     Route::get('/my-services', function () {
-        return view('myservices',['myServices'=>auth()->user()->service()]);
+        return view('myservices',['myServices'=>auth()->user()->service()->get()]);
     });
 
     Route::get('/add-service', function () {
-        return view('addservice',['categories'=>Category::all()]);
+        return view('addservice',['categories'=>Category::all(),'cities'=>City::all()]);
     });
 
     Route::get('/edit-service/{service}',[ServiceController::class,'getEditService'])->name('get-edit-service');

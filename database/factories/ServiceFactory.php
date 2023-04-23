@@ -24,6 +24,8 @@ class ServiceFactory extends Factory
             'description' => fake()->words(40, true),
             'work_time' => 'Day',
             'price' => 23.43,
+            'updated_at' => null,
+            'created_at' => date('now'),
         ];
         // return [
         //     '' => fake()->name(),

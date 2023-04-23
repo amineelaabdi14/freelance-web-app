@@ -13,7 +13,7 @@ class Comment extends Model
         'service_id',
         'comment'
     ];
-    public function gig(){
+    public function service(){
         return $this->belongsTo(Service::class);
     }
     public function user(){

@@ -25,7 +25,8 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('city_id')->references('id')->on('cities');
-            $table->timestamps();
+            $table->dateTime('created_at');
+            $table->dateTime('updated_at')->nullable();
         });
     }
 

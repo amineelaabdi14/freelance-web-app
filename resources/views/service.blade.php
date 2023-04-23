@@ -40,42 +40,45 @@
                       <div class=" text-dark">
                         <div class="card-body p-4">
                           <h4 class="mb-5">Recent comments</h4>
+                          @foreach($comments as $comment)
                         {{-- comment --}}
-                          <div class="d-flex flex-start">
+                          <div class="d-flex flex-start mb-4">
                             <img class="rounded-circle shadow-1-strong me-3"
                               src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="60"
                               height="60" />
                             <div>
-                              <h6 class="fw-bold mb-1">Maggie Marsh</h6>
+                              <h6 class="fw-bold mb-1">{{$comment->user->name}}</h6>
                               <div class="d-flex align-items-center mb-3">
                                 <p class="mb-0">
-                                  March 07, 2021
+                                  {{substr($comment->created_at,0,10)}}
                                 </p>
                               </div>
                               <p class="mb-0">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                since the 1500s, when an unknown printer took a galley of type and
-                                scrambled it.
+                                {{$comment->comment}}
                               </p>
                             </div>
                           </div>
                           {{-- end  comment --}}
+                          @endforeach
                         </div>
                         <hr class="my-0" />
                       </div>
                     </div>
-                    <form id="add-comment-form" action="" class="w-100 m-auto d-flex flex-column  align-items-center mt-5">
+                    <div class="mt-3">
+                      {{$comments->links()}}
+                    </div>
+                    <form id="add-comment-form" action="{{route('add-comment',$service['id'])}}" method="POST" class="w-100 m-auto d-flex flex-column  align-items-center mt-5">
+                      @csrf
                       <div class=" w-75">
-                        <textarea name="" id="comment-input" cols="30" rows="10" class="w-75 ps-2 border border-1 border-secondary rounded-1 w-100" placeholder="Enter your comment"></textarea>
-                        <button class="btn btn-primary mt-4" style="width: 100px">Comment</button>
+                        <textarea  id="comment-input" cols="30" name="comment" rows="10" class="w-75 ps-2 border border-1 border-secondary rounded-1 w-100" placeholder="Enter your comment"></textarea>
+                        <button class="btn btn-primary mt-4"  type="submit" style="width: 100px">Comment</button>
                       </div>
                     </form>
                   </div>
             </div>
         </div>
     </div>
-    <x-footer />
+    
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -96,5 +99,6 @@
         </div>
       </div>
     </div>
+    <x-footer />
 </body>
 </html>

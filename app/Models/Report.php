@@ -14,7 +14,7 @@ class Report extends Model
         'service_id',
         'message'
     ];
-    public function gig(){
+    public function service(){
         return $this->belongsTo(Service::class);
     }
     public function user(){
