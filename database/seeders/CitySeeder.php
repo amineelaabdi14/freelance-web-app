@@ -17,7 +17,8 @@ class CitySeeder extends Seeder
         $json = file_get_contents(storage_path('app/ville.json'));
         $data = json_decode($json, true);
         foreach ($data as $city){
-            City::create(['name'=>$city['ville']]);
+            City::create(['name'=>$city['ville'],'updated_at' => null,
+            'created_at' => date('now'),]);
         }
     }
 }

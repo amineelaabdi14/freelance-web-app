@@ -15,6 +15,7 @@ class Service extends Model
         'category_id',
         'description',
         'isActive',
+        'price',
         'image',
         'work_time',
         'city_id',
@@ -29,10 +30,10 @@ class Service extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
-    public function reviews(){
+    public function comment(){
         return $this->hasMany(Comment::class);
     }
-    public function reports(){
+    public function report(){
         return $this->hasMany(Report::class);
     }
 }

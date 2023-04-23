@@ -54,6 +54,8 @@ class AuthController extends Controller
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => bcrypt($validatedData['password']),  
+            'updated_at' => null,
+            'created_at' => date('now'),
         ]);
 
         Auth::login($user);
