@@ -8,17 +8,24 @@ use Illuminate\Support\Facades\Hash;
 class EditProfileController extends Controller
 {
     //
-    public function editprofile(Request $req){
+    public function editprofile(Request $request){
         $user=auth()->user();
-        if(!Hash::check($req->password,$user->password)){
+        if(!Hash::check($request->myPassword,$user->password)){
             return view('profile',['message'=>'Incorrect password','type'=>'danger']);
         }
-        $user->name=$req->name;
-        $user->email=$req->email;
-        $user->birthday=$req->birthday;
-        if($req->newPassword) $user->password = Hash::make($req->newPassword);
-        $user->save();
+        if ($request->hasFile('photo')) {
+            $path = substr($request->file('photo')->store('public/pofilePictures'),7);
+            $user->update($request->all());
+            $user->image=$path;
+            if($request->newPassword) {
+                $user->password = Hash::make($request->newPassword);
+            }
+            $user->save();
+        }
+        else{
+            if($request->newPassword) $user->password = Hash::make($request->newPassword);
+            $user->update($request->all());
+        }
         return view('profile')->with('message', 'Saved')->with('type', 'success');
-
     }
 }

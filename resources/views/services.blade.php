@@ -17,10 +17,8 @@
                         <img src="{{asset('storage/'.$service['image'])}}" class="card-img-top" alt="Hollywood Sign on The Hill" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <h5 class="card-title">{{$service['title']}}</h5>
+                            <p class="text-secondary mb-0">{{$service->user->job_title}}</p>
                             <strong>{{$service['price']}} Mad / {{$service['work_time']}}</strong>
-                            <p class="card-text">
-                                {{strlen($service['description'])>60 ? substr($service['description'] ,0,60)."...": $service['description']}}
-                            </p>
                         </div>
                     </div>
                 </a>

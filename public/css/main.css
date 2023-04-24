@@ -357,7 +357,6 @@ a:hover{
   max-width: 500px;
   border: solid rgb(163, 163, 163) 1px;
   border-radius: 6px;
-  height: 720px;
 }
 .edit-label{
   font-family: 'Open Sans', sans-serif;
@@ -429,6 +428,7 @@ a:hover{
   font-size: 12px;
 }
 .myService-card{
+  min-height: 327px;
   width: 286px;
   position: static;
 }

@@ -21,9 +21,9 @@ class AuthController extends Controller
             return redirect()->intended('profile');
         }
  
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+        return redirect()
+                ->back()
+                ->withErrors('Incorrect email or password');
     
     }
     public function register(Request $request)
@@ -47,7 +47,9 @@ class AuthController extends Controller
         ]);
     
         if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+            return redirect()
+                ->back()
+                ->withErrors($validator->errors());
         }
         $validatedData = $validator->validated();
         $user = User::create([
@@ -56,6 +58,8 @@ class AuthController extends Controller
             'password' => bcrypt($validatedData['password']),  
             'updated_at' => null,
             'created_at' => date('now'),
+            'image' => 'profilePictures/defaultAvatar.jpg',
+            'job_title' => 'user',
         ]);
 
         Auth::login($user);

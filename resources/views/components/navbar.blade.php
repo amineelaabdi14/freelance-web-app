@@ -15,7 +15,11 @@
 
         <div class="dropdown me-2">
           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            @if(auth()->user())
             <img src="{{asset('storage/'.auth()->user()->image)}}" class="rounded-circle" alt="" style="width:30px;">
+            @else 
+            <img src="{{asset('storage/profilePictures/defaultAvatar.jpg')}}" class="rounded-circle" alt="" style="width:30px;">
+            @endif
            </button>
           <ul class="dropdown-menu me-5">
             <li><a class="dropdown-item" href="/profile">Profile</a></li>

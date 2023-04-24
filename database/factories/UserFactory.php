@@ -25,7 +25,7 @@ class UserFactory extends Factory
             'job_title' => 'driver',
             'updated_at' => null,
             'created_at' => date('now'),
-            'image' => 'defaultAvatar.jpg',
+            'image' => 'profilePictures/defaultAvatar.jpg',
         ];
     }
 
