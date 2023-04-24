@@ -29,11 +29,11 @@
                 <div id="fullName"></div>
                 <div class="d-flex justify-content-between align-items-center mt-3" style="">
                     <span><a href="#" onclick="createAccount()">Create an account</a></span>
-                    <button id="login-btn" type="submit"  name="signMeIn" disabled>Sign In</button>
+                    <button id="login-btn" type="submit"  name="signMeIn" >Sign In</button>
                 </div>
             </form>
         </div>
-        <script src="{{ URL::asset('js/main.js') }}">
+        <script src="{{ URL::asset('js/main.js') }}"></script>
     </div>
     <x-footer />
 </body>

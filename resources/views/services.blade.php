@@ -12,16 +12,16 @@
             <img src="/images/nomatch.png" alt="" style="max-width: 600px">
             @endif
             @foreach ($services as $service)
-                <a href="{{route('show-service',$service)}}" class="d-flex justify-content-center flex-col mb-4">
-                    <div class="card h-70 myService-card">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
-                        alt="Hollywood Sign on The Hill" />
-                    <div class="card-body">
-                        <h5 class="card-title">{{$service['title']}}</h5>
-                        <p class="card-text">
-                            {{strlen($service['description'])>60 ? substr($service['description'] ,0,60)."...": $service['description']}}
-                        </p>
-                    </div>
+                <a href="{{route('show-service',$service)}}" class="mb-4 ">
+                    <div class="card h-70 myService-card ">
+                        <img src="{{asset('storage/'.$service['image'])}}" class="card-img-top" alt="Hollywood Sign on The Hill" />
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title">{{$service['title']}}</h5>
+                            <strong>{{$service['price']}} Mad / {{$service['work_time']}}</strong>
+                            <p class="card-text">
+                                {{strlen($service['description'])>60 ? substr($service['description'] ,0,60)."...": $service['description']}}
+                            </p>
+                        </div>
                     </div>
                 </a>
             @endforeach

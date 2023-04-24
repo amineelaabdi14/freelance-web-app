@@ -5,10 +5,10 @@
     <x-navbar />
     <div class="hasNavBar">
         <div id="product-container" class=" mt-5 d-flex flex-column flex-lg-row align-items-center justify-content-lg-around p-0 p-mg-5 m-auto" style="width:85%;">
-            <div id="service-page-image" class="">
-                <img src="/images/upload-service-image.png" alt="" class="shadow-lg container p-0">
+            <div id="service-page-image" class="me-0 me-lg-5">
+              <img src="{{asset('storage/'.$service['image'])}}" alt="" class="shadow-lg container p-0">
             </div>
-            <div id="service-infos-container" class="d-flex flex-column align-content-start ps-4 justify-content-center mt-5 mt-lg-0 ">
+            <div id="service-infos-container" class="d-flex flex-column align-content-start ps-4 justify-content-center ms-0 mt-5 mt-lg-0  ">
                 <div class="">
                     <div class="d-flex flex-row justify-content-between">
                         <h2 class="mb-0 fs-4">
