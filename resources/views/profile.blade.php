@@ -12,7 +12,7 @@
             @csrf
             @method('PUT')
             <div class="d-flex justify-content-center mt-4">
-                <img id="editImage" src="images/defaultAvatar.jpg" alt="" class="rounded-circle" style="width:180px;height:180px;">
+                <img id="editImage" src="{{asset('storage/'.auth()->user()->image)}}" alt="" class="rounded-circle" style="width:180px;height:180px;">
             </div>
             <div id="EditName" class="mt-2 w-100 ps-3 pe-3">
                 <label for="name" class="edit-label">NAME</label>
