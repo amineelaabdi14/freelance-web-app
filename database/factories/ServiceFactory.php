@@ -26,6 +26,7 @@ class ServiceFactory extends Factory
             'price' => 23.43,
             'updated_at' => null,
             'created_at' => date('now'),
+            'image' => 'servicesImages/home-service.jpg',
         ];
         // return [
         //     '' => fake()->name(),
