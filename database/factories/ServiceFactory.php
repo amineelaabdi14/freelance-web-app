@@ -20,7 +20,7 @@ class ServiceFactory extends Factory
         return [
             'user_id' => null,
             'category_id' => null,
-            'title' => fake()->words(6, true),
+            'title' => fake()->words(5, true),
             'description' => fake()->words(40, true),
             'work_time' => 'Day',
             'price' => 23.43,

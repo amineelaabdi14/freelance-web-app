@@ -9,7 +9,7 @@
         </div>
         <div class=" px-5 py-3 w-100 d-flex flex-wrap justify-content-around">
             @if(count($services)==0)
-            <img src="/images/nomatch.png" alt="" style="max-width: 600px">
+            <img src="/images/nomatch.png" alt="" class="" style="max-width: 600px">
             @endif
             @foreach ($services as $service)
                 <a href="{{route('show-service',$service)}}" class="mb-4 ">
