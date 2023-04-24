@@ -40,16 +40,19 @@
                       <div class=" text-dark">
                         <div class="card-body p-4">
                           <h4 class="mb-5">Recent comments</h4>
+                          @if(count($comments)==0)
+                              <span class="text-secondary">No comments for this service</span>
+                          @endif
                           @foreach($comments as $comment)
                         {{-- comment --}}
                           <div class="d-flex flex-start mb-4">
                             <img class="rounded-circle shadow-1-strong me-3"
-                              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="60"
+                              src="{{asset('storage/'.$comment->user->image)}}" alt="avatar" width="60"
                               height="60" />
                             <div>
                               <h6 class="fw-bold mb-1">{{$comment->user->name}}</h6>
-                              <div class="d-flex align-items-center mb-3">
-                                <p class="mb-0">
+                              <div class="d-flex align-items-center mb-1">
+                                <p class="mb-0 fst-italic text-secondary" style="font-size:15px;">
                                   {{substr($comment->created_at,0,10)}}
                                 </p>
                               </div>
