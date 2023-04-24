@@ -4,7 +4,7 @@
 <body>
     <x-navbar />
     <div id="become-a-seller-page" class="hasNavBar">
-        <h2 class="fw-bold text-center mt-4">Complete your registration in order to post in our website </h2>
+        <h2 class="fw-bold text-center mt-4 my-5">Complete your registration in order to post in our website </h2>
         <form id="become_a_seller_form" action="" class="m-auto border border-1 bordee-primary rounded-1 shadow-lg p-5">
             <label for="" class="MyLabels">City :</label>
             <select name="" id="" class="edit-service-input become_seller_input ps-2"">

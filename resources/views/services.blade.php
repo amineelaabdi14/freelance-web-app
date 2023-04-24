@@ -24,8 +24,10 @@
                 </a>
             @endforeach
         </div>
-
-        {{$services->links()}}
+        <div class="d-flex justify-content-end pe-4">
+            {{$services->links()}}
+        </div>
+        
 
     </div>
 </body>

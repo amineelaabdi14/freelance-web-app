@@ -4,29 +4,33 @@
       <div class="row">
         <div class="col-sm-12 col-md-6">
           <h6>About</h6>
-          <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+          <p class="text-justify"></p>Service.ma is Morocco's first app that connects users with trusted service providers for various tasks. Our mission is to make it easy for people to find reliable and affordable help for their everyday needs. We're committed to partnering with the best service providers in Morocco and supporting local businesses to create job opportunities. Thank you for choosing Service.ma!</p>
         </div>
 
         <div class="col-xs-6 col-md-3">
           <h6>Categories</h6>
           <ul class="footer-links">
-            <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-            <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-            <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-            <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-            <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+            @foreach([
+              'Cleaning',
+              'Landscaping',
+              'Home Improvement',
+              'Personal Care',
+              'Baby sitting',
+              'Transportation',
+              'Education',
+              'Technology'
+          ] as $category)
+            <li><a href="">{{$category}}</a></li>
+            @endforeach
           </ul>
         </div>
 
         <div class="col-xs-6 col-md-3">
           <h6>Quick Links</h6>
           <ul class="footer-links">
-            <li><a href="http://scanfcode.com/about/">About Us</a></li>
-            <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-            <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-            <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-            <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+            <li><a href="http://scanfcode.com/about/">Services</a></li>
+            <li><a href="http://scanfcode.com/contact/">Profile</a></li>
+            <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Join us</a></li>
           </ul>
         </div>
       </div>

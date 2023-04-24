@@ -6,10 +6,10 @@
     <div id="profile-page" class="hasNavBar px-3 px-lg-5 d-flex flex-column flex-lg-row justify-content-between justify-content-lg-between align-items-center align-items-lg-start ">
         <div class="p-0">
             <div id="profile-infos" class="d-flex flex-column align-items-center border border-1 rounded-1 mt-5 pt-4">
-                <img src="/images/defaultAvatar.jpg" alt="" class="rounded-circle" style="width: 150px">
-                    <div>
+                <img src="{{asset('storage/'.$user->image)}}" alt="" class="rounded-circle" style="width: 150px">
+                    <div class="">
                         <strong class="fs-4 text-dark">{{$user->name}}</strong>
-                        <span class="badge bg-primary ms-2">Seller</span>
+                        <span class="badge bg-primary ms-2">{{$user->job_title}}</span>
                     </div>
                     <button class="btn btn-primary mt-3 w-25">Chat</button>
                 <div class="w-75 py-3">
