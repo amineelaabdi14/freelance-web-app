@@ -20,4 +20,13 @@ class UserController extends Controller
         }
         return redirect()->back();
     }
+    public function makeSeller(User $user,Request $request){
+        $user->update(($request->all()));
+        $user->assignRole('seller');
+        return redirect('my-services');
+    }
+    public function addAdmin(User $user){
+        $user->assignRole('admin');
+        return redirect()->back()->with('message','User updated');
+    }
 }

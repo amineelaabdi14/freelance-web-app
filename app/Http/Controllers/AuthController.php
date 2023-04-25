@@ -61,16 +61,16 @@ class AuthController extends Controller
             'image' => 'profilePictures/defaultAvatar.jpg',
             'job_title' => 'user',
         ]);
-
+        $user->assignRole('visitor');
         Auth::login($user);
 
         return redirect()->intended('profile');
     }
-    public function logout(Request $request)
-    {
+    public function logout()
+    {   
         Auth::logout();
 
-        return response()->json(['message' => 'Logged out']);
+        return redirect('authenticate');
     }
 }
 

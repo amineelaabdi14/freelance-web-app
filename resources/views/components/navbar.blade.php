@@ -23,7 +23,11 @@
            </button>
           <ul class="dropdown-menu me-5">
             <li><a class="dropdown-item" href="/profile">Profile</a></li>
+            @role('seller')
             <li><a class="dropdown-item" href="/my-services">My Services</a></li>
+            @else
+            <li><a class="dropdown-item" href="/become-a-seller">Become a seller</a></li>
+            @endrole
           </ul>
         </div>
     </div>

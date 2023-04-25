@@ -9,7 +9,6 @@ use App\Http\Controllers\AuthController;
 Route::group(['middleware' => 'guest','controller'=>AuthController::class], function () {
     Route::post('login', 'login')->name('login');
     Route::post('register', 'register')->name('register');
-    Route::post('logout', 'logout');
     Route::get('/login', function (){
         return view ('authentication');
     })->name('authenticate');

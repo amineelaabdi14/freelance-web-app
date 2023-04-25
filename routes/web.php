@@ -8,6 +8,7 @@ use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\UserController;
 use App\Models\Service;
 use App\Models\Category;
 use App\Models\User;
@@ -33,6 +34,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');
         Route::post('/report/{id}',[ReportController::class,'report'])->name('report-service');
         Route::post('/comment/{id}',[CommentController::class,'comment'])->name('add-comment');
+        Route::post('/make-seller/{user}',[UserController::class,'makeSeller'])->name('make-seller');
+        Route::get('/become-a-seller',function(){
+            return view('becomeaseller',['cities'=>City::all()]);
+        });
+        Route::get('logout', [AuthController::class,'logout'])->name('logout');
 });
 
 
@@ -42,9 +48,6 @@ Route::get('/user/{user}',function(User $user){
     return view('user',['user'=>$user]);
 })->name('get-user');
 
-Route::get('/become-a-seller',function(){
-    return view('becomeaseller',['cities'=>City::all()]);
-});
 
 Route::post('/search',[ServiceController::class,'search'])->name('search');
 
