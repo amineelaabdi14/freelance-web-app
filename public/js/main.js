@@ -70,22 +70,19 @@ function alrMember()
 
     document.getElementById('LoginformContainer').style.height="370px";
 }
-async function getService(id) {
-      const response = await fetch(`/getService/${id}`);
-      const data = await response.json();
-      console.log(data[0].original);
-      return data[0].original;
+
+function showactions(element){
+    let MyElement=element;
+    MyElement.children[3].style.visibility="visible";
+    MyElement.style.backgroundColor="#d9d9d9";
 }
-
-
-async function showEditervice(service){
-    let data= await getService(service);
-    document.getElementById('edit-service-title').value=data.title;
-    document.getElementById('edit-service-price').value=data.title;
-    document.getElementById('edit-service-image').value=data.title;
-    document.getElementById('edit-service-category').value=data.title;
-    document.getElementById('edit-service-delivery_time').value=data.title;
-    document.getElementById('edit-service-description').value=data.title;
+function hideactions(element){
+    let MyElement=element;
+    MyElement.children[3].style.visibility="hidden";
+    MyElement.style.backgroundColor="white";
 }
-
-
+function fillEditCategory(id,name){
+    document.getElementById('categoryInput').value=name;
+    document.getElementById('exampleModalLabel').innerText=name;
+    document.getElementById('categoryCrud').action=`/edit-category/${id}`;
+}
