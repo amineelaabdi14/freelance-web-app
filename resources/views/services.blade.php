@@ -9,11 +9,11 @@
         </div>
         <div class=" px-5 py-3 w-100 d-flex flex-wrap justify-content-around">
             @if(count($services)==0)
-            <img src="/images/nomatch.png" alt="" class="" style="max-width: 600px">
+            <img src="/images/nomatch.png" alt="" class="object-fit-cover" style="max-width: 600px">
             @endif
             @foreach ($services as $service)
                 <a href="{{route('show-service',$service)}}" class="mb-4 ">
-                    <div class="card h-70 myService-card ">
+                    <div class="card  myService-card ">
                         <img src="{{asset('storage/'.$service['image'])}}" class="card-img-top" alt="Hollywood Sign on The Hill" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <h5 class="card-title">{{$service['title']}}</h5>

@@ -91,9 +91,11 @@ class ServiceController extends Controller
         $comments = $service->comment()->orderBy('created_at', 'desc')->paginate(5);
         return view('service',['service'=>$service,"comments"=>$comments]);
     }
+
     public function getEditService(Service $service){
         return view('editservice',['categories'=>Category::all(),'service'=>$service,'cities'=>City::all()]);
     }
+
     public function search(Request $request) {
         $searchKeyword=$request->search;
         $services = Service::whereHas('user', function($query) use ($searchKeyword) {
@@ -102,5 +104,11 @@ class ServiceController extends Controller
         ->orwhere('title', 'like', "%$searchKeyword%")
         ->paginate(20);
         return view('services', compact('services'));
+    }
+
+    public function deleteServiceByAdmin(Service $service){
+        $user=$service->user;
+        $service->delete(); 
+        return redirect()->back();
     }
 }

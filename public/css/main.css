@@ -429,8 +429,12 @@ a:hover{
 }
 .myService-card{
   min-height: 351px;
-  width: 286px;
+  max-height: 351px;
+  width: 350px;
   position: static;
+}
+.myService-card img{
+  max-height: 190px;
 }
 #edit-add-form{
   width: 50%;
@@ -443,6 +447,9 @@ a:hover{
 #service-page-image{
   max-width: 600px;
   min-width: 350px;
+}
+#service-page-image *{
+  max-height: 376px;
 }
 #sercive-page-description{
   min-height:150px;
@@ -458,7 +465,7 @@ a:hover{
   width: 100%;
   max-width: 450px;
 }
-#profile-infos{
+#profile-infos,#manage-user-infos{
   font-size: 15px;
   color: rgb(167, 167, 167);
 }
@@ -478,4 +485,19 @@ a:hover{
 .service-avatar{
   width: 100%;
   height: 191px;
+}
+#userstable{
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+}
+#manage-user-infos{
+  width: 100%;
+  max-width: 500px;
+}
+#manage-user-services{
+  min-width: 70%;
+}
+#manage-user-services *{
+  position: static;
 }
