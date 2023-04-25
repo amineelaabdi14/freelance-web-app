@@ -21,11 +21,12 @@ return new class extends Migration
             $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('city_id');
             $table->string('image')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('city_id')->references('id')->on('cities');
             $table->dateTime('created_at');
             $table->dateTime('updated_at')->nullable();
+            $table->dateTime('deleted_at')->nullable();
         });
     }
 

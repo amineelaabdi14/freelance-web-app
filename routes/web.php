@@ -25,21 +25,27 @@ use App\Models\City;
 */
 
 Route::get('/',[ServiceController::class,'search'])->name('home');
+
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/profile', function (){
-        return view('profile');
-    })->name('profile');
-    Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');
-    Route::post('/report/{id}',[ReportController::class,'report'])->name('report-service');
-    Route::post('/comment/{id}',[CommentController::class,'comment'])->name('add-comment');
+        Route::get('/profile', function (){
+            return view('profile');
+        })->name('profile');
+        Route::put('/profile', [EditProfileController::class, 'editprofile'])->name('edit-profile');
+        Route::post('/report/{id}',[ReportController::class,'report'])->name('report-service');
+        Route::post('/comment/{id}',[CommentController::class,'comment'])->name('add-comment');
 });
+
+
 Route::get('/service/{service}',[ServiceController::class,'showService'])->name('show-service');
+
 Route::get('/user/{user}',function(User $user){
     return view('user',['user'=>$user]);
 })->name('get-user');
+
 Route::get('/become-a-seller',function(){
     return view('becomeaseller',['cities'=>City::all()]);
 });
+
 Route::post('/search',[ServiceController::class,'search'])->name('search');
 
 

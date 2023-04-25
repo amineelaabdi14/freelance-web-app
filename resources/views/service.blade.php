@@ -6,7 +6,7 @@
     <div class="hasNavBar">
         <div id="product-container" class=" mt-5 d-flex flex-column flex-lg-row align-items-center justify-content-lg-around p-0 p-mg-5 m-auto" style="width:85%;">
             <div id="service-page-image" class="me-0 me-lg-5">
-              <img src="{{asset('storage/'.$service['image'])}}" alt="" class="shadow-lg container p-0">
+              <img src="{{asset('storage/'.$service['image'])}}" alt="" class="shadow-lg container p-0 object-fit-cover">
             </div>
             <div id="service-infos-container" class="d-flex flex-column align-content-start ps-4 justify-content-center ms-0 mt-5 mt-lg-0  ">
                 <div class="">
@@ -95,7 +95,7 @@
             <form action="{{route('report-service',$service['id'])}}" method="post">
               @csrf
               <label for="" class="MyLabels">Report message</label>
-              <textarea name="reportMessage" id="" cols="20" rows="5" class="edit-service-input ps-3 pt-2"></textarea>
+              <textarea name="reportMessage" id="" cols="20" rows="3" class="edit-service-input ps-3 pt-2"></textarea>
               <button type="submit" class="btn btn-danger">Submit</button>
             </form>
           </div>
