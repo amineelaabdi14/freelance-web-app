@@ -4,7 +4,7 @@
         <li class="liLinks text-dark btn mb-3 mt-1 d-flex flex-column flex-md-row align-items-center "><i class="fa-solid fa-briefcase"></i><a href="/my-services" class="ms-3 d-none d-md-inline fw-semibold ">My Services</a></li> 
         <div id="admin-nav-section">
             <li class="liLinks text-dark btn mb-3 mt-1 d-flex flex-column flex-md-row align-items-center "><i class="fa-solid fa-users"></i><a href="/manage-users" class="ms-3 d-none d-md-inline fw-semibold ">Users</a></li> 
-            <li class="liLinks text-dark btn mb-3 mt-1 d-flex flex-column flex-md-row align-items-center "><i class="fa-solid fa-bars"></i><a href="/manage-reports" class="ms-3 d-none d-md-inline fw-semibold ">Categories</a></li> 
+            <li class="liLinks text-dark btn mb-3 mt-1 d-flex flex-column flex-md-row align-items-center "><i class="fa-solid fa-bars"></i><a href="/categories" class="ms-3 d-none d-md-inline fw-semibold ">Categories</a></li> 
         </div>
     </ul>
     <a id="signOutBtn" href="includes/signout.php?signout=1" class="d-block">

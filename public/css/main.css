@@ -501,3 +501,9 @@ a:hover{
 #manage-user-services *{
   position: static;
 }
+.myActions {
+  visibility: hidden;
+}
+.myActions *{
+  background-color: #d9d9d9;
+}
