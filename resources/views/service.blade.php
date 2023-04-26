@@ -29,7 +29,7 @@
                 </div>
                 <strong class="fs-4">{{$service['price']}} MAD / {{$service['work_time']}} </strong>
                 <div class="d-flex flex-row justify-content-start w-100 mt-4">
-                    <button class="btn btn-primary ">Chat</button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ProposalModel">Propose</button>
                 </div>
             </div>
         </div>
@@ -102,6 +102,29 @@
         </div>
       </div>
     </div>
+    <!-- Proposal -->
+    <div class="modal fade" id="ProposalModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Submit a proposal</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="{{route('add-proposal',$service)}}" method="post">
+              @csrf
+              <label for="" class="MyLabels">Rroposal message</label>
+              <input type="text" name="message" class="edit-service-input ps-2" style="height: 50px">
+
+              <label for="" class="MyLabels ">Phone</label>
+              <input type="text" name="phone" class="edit-service-input mb-3 ps-2" style="height: 50px">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <x-footer />
 </body>
 </html>

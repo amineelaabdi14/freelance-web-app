@@ -13,7 +13,7 @@
           @csrf
           @method('put')
           <div id="edit-profile-avatar" class="d-flex justify-content-center">
-            <img  src="{{asset('storage/'.$service['image'])}}" class="w-100 rounded-1">
+            <img id="service-image-form" src="{{asset('storage/'.$service['image'])}}" class="w-100 rounded-1">
           </div>
             <input type="file" class="form-control my-4" id="image-upload" name="photo" onchange="loadFile(event)"/>
             <!-- 2 column grid layout with text inputs for the first and last names -->

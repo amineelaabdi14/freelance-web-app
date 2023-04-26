@@ -3,7 +3,7 @@
         <a href="{{route('home')}}">
           <img id="navLogo" src="/images/logo.png" alt="service.ma" alt="" class="ms-4 mt-1 d-none d-sm-inline" >
         </a>
-        <form action="{{route('search')}}" method="post" class="input-group d-flex flex-row align-content-center searchbar">
+        <form action="{{route('search')}}" method="get" class="input-group d-flex flex-row align-content-center searchbar">
           @csrf
             <div class="form-outline ms-3" style="width:82%">
           <input type="search" id="form1" class="form-control" placeholder="Search in services" name="search" />
@@ -13,20 +13,22 @@
             </button>
           </form>
           @if(auth()->user()!=null)
-          <div class="dropdown me-2">
+          <div class="dropdown me-5">
             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="{{asset('storage/profilePictures/defaultAvatar.jpg')}}" class="rounded-circle" alt="" style="width:30px;">
+              <img src="{{asset('storage/'.auth()->user()->image)}}" class="rounded-circle" alt="" style="width:30px;">
             </button>
             <ul class="dropdown-menu me-5">
               <li><a class="dropdown-item" href="/profile">Profile</a></li>
               @role('seller')
               <li><a class="dropdown-item" href="/my-services">My Services</a></li>
+              <li><a class="dropdown-item" href="/my-proposals">My Proposals</a></li>
               @else
               <li><a class="dropdown-item" href="/become-a-seller">Become a seller</a></li>
               @endrole
               @role('admin')
               <li><a class="dropdown-item" href="/manage-users">Admin</a></li>
               @endrole
+              <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
             </ul>
           </div>
           @else

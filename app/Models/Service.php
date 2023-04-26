@@ -36,4 +36,7 @@ class Service extends Model
     public function report(){
         return $this->hasMany(Report::class);
     }
+    public function proposal(){
+        return $this->hasMany(Proposal::class);
+    }
 }
