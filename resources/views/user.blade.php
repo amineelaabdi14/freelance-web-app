@@ -11,7 +11,7 @@
                         <strong class="fs-4 text-dark">{{$user->name}}</strong>
                         <span class="badge bg-primary ms-2">{{$user->job_title}}</span>
                     </div>
-                    <button class="btn btn-primary mt-3 w-25">Chat</button>
+                    <button class="btn btn-primary mt-3 w-25" disabled>Chat</button>
                 <div class="w-75 py-3">
                     <hr>
                     <div class="d-flex flex-wrap justify-content-between w-100 mb-1">

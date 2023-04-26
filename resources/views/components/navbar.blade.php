@@ -4,11 +4,10 @@
           <img id="navLogo" src="/images/logo.png" alt="service.ma" alt="" class="ms-4 mt-1 d-none d-sm-inline" >
         </a>
         <form action="{{route('search')}}" method="get" class="input-group d-flex flex-row align-content-center searchbar">
-          @csrf
             <div class="form-outline ms-3" style="width:82%">
           <input type="search" id="form1" class="form-control" placeholder="Search in services" name="search" />
             </div>
-            <button type="submit" class="btn">
+            <button type="submit" class="btn ">
               <i class="fas fa-search"></i>
             </button>
           </form>
@@ -32,7 +31,7 @@
             </ul>
           </div>
           @else
-          <a href="{{route('login')}}"><button class="btn btn-primary mt-2">Login</button></a>
+          <a href="{{route('login')}}" class="me-5"><button class="btn btn-primary mt-2">Login</button></a>
           @endif
     </div>
       <div class="w-100 mt-3 navbar-category">
