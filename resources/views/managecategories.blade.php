@@ -3,7 +3,7 @@
 <x-head :title="'Categories'" />
 <body>
     <x-navbar />
-    <x-sidebar :element="$element=3" />
+    <x-sidebar :element="$element=4" />
     <div class="hasNavBar hasSideBar">
         <div class="d-flex flex-row justify-content-end px-4 pt-5">
         <button class="border-0 text-white btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="categoryCrud.reset()">

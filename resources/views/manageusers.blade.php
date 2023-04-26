@@ -3,7 +3,7 @@
 <x-head :title="'Manage users'"/>
 <body>
     <x-navbar />
-    <x-sidebar :element="$elemnt=2" />
+    <x-sidebar :element="$elemnt=3" />
     <div class="hasNavBar hasSideBar">
       @if(session('message'))
         <x-alert :message="session('message')"  :type="'success'"/>

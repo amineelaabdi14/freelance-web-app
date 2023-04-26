@@ -3,7 +3,7 @@
 <x-head :title="'Manage users'"/>
 <body>
     <x-navbar />
-    <x-sidebar :element="$elemnt=2" />
+    <x-sidebar :element="$elemnt=3" />
     <div class="hasNavBar hasSideBar">
 
         <div class="d-flex flex-column align-items-center pt-3 mt-3 px-4">

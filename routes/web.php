@@ -8,6 +8,7 @@ use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProposalController;
 use App\Http\Controllers\UserController;
 use App\Models\Service;
 use App\Models\Category;
@@ -39,6 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
             return view('becomeaseller',['cities'=>City::all()]);
         });
         Route::get('logout', [AuthController::class,'logout'])->name('logout');
+        Route::post('add-proposal/{service}', [ProposalController::class,'create'])->name('add-proposal');
 });
 
 
@@ -50,6 +52,6 @@ Route::get('/user/{user}',function(User $user){
 
 Route::get('/search',[ServiceController::class,'search'])->name('search');
 
-Route::post('/filter/{category}',[ServiceController::class,'filterByCat'])->name('filter-by-category');
+Route::get('/filter/{category}',[ServiceController::class,'filterByCat'])->name('filter-by-category');
 
 
