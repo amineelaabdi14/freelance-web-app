@@ -14,7 +14,8 @@
             <tr>
               <th>id</th>
               <th>User</th>
-              <th>Title</th>
+              <th>Role</th>
+              <th>Total Reports</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -37,7 +38,18 @@
                 </div>
               </td>
               <td>
-                <p class="fw-normal mb-1">{{$user->job_title}}</p>
+                <p class="fw-normal mb-1 badge bg-black">{{$user->getRoleNames()[0]}}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">
+                  @php
+                    $count=0;
+                    foreach ($user->service as $service){
+                        $count+=count($service->report);
+                    }
+                  @endphp
+                  {{$count}}
+                </p>
               </td>
               <td class="d-flex flex-row">
                 <form action="{{route('make-admin',$user)}}" method=post>

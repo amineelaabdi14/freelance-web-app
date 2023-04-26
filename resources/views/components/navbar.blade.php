@@ -24,6 +24,9 @@
               @else
               <li><a class="dropdown-item" href="/become-a-seller">Become a seller</a></li>
               @endrole
+              @role('admin')
+              <li><a class="dropdown-item" href="/manage-users">Admin</a></li>
+              @endrole
             </ul>
           </div>
           @else

@@ -510,3 +510,6 @@ a:hover{
 #users-container{
   padding-top: 40px;
 }
+#users-container *{
+  position: static;
+}

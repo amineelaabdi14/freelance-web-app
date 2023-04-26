@@ -8,10 +8,11 @@ use App\Http\Controllers\CategoryController;
 use App\Models\User;
 use App\Models\Report;
 use App\Models\Category;
+use App\Models\Service;
 
 Route::group(['middleware' => 'auth','controller'=>UserController::class], function () {
     Route::get('/manage-users', function (){
-        return view ('manageusers',['users'=>User::all()]);
+        return view ('manageusers',['users'=>User::with('service.report')->get()]);
     })->middleware('role:admin');
     Route::get('/manage-user/{user}','manageUser')->name('manage-user');
 
