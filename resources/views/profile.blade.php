@@ -8,6 +8,9 @@
         @if (isset($message))
             <x-alert :type="$type" :message="$message" />
         @endif
+        @if (isset($message))
+        <x-alert :type="$type" :message="$message" />
+        @endif
         <form id="edit-profile-form" action="{{route('edit-profile')}}" method="POST" class="d-flex flex-column align-items-center m-auto mt-5" enctype="multipart/form-data">
             @csrf
             @method('PUT')

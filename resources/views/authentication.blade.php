@@ -4,6 +4,12 @@
 <body id="loginContent">
     <x-navbar />
     <div class="hasNavBar">
+        @if(session("restric")!=null)
+          <x-alert :type="'danger'" :message="session('restric')""  />
+            <script>
+                myAlert.style.width="100%";
+            </script>
+        @endif
         @if($errors->all())
           <x-alert :type="'danger'" :message="$errors->all()[0]"  />
             <script>

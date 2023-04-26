@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
     })->middleware('role:seller');
 
     Route::get('/my-proposals', function () {
-        return view('myproposals',['proposals'=>auth()->user()->proposal]);
+        return view('myproposals',['proposals'=>auth()->user()->service]);
     })->middleware('role:seller');
 
     Route::put('/mark-proposal/{proposal}', [ProposalController::class, 'markProposal'])->middleware('role:seller')->name('mark-proposal');

@@ -17,7 +17,8 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($proposals as $proposal)
+                @foreach($proposals as $service)
+                @foreach($service as $proposal)
                 <tr>
                   <td>
                     {{$proposal->service->title}}
@@ -62,6 +63,7 @@
                     </form>
                   </td>
                 </tr>
+                @endforeach
                 @endforeach
               </tbody>
             </table>

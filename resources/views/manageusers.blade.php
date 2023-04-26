@@ -38,7 +38,7 @@
                 </div>
               </td>
               <td>
-                <p class="fw-normal mb-1 badge bg-black">{{$user->getRoleNames()[0]}}</p>
+                <p class="fw-normal mb-1 badge bg-black">{{$user->getRoleNames()[count($user->getRoleNames())-1]}}</p>
               </td>
               <td>
                 <p class="fw-normal mb-1">

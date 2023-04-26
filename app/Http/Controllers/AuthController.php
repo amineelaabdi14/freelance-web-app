@@ -14,6 +14,8 @@ class AuthController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
+
+        $user = User::where('email', $credentials['email'])->first();
  
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
@@ -27,7 +29,7 @@ class AuthController extends Controller
     
     }
     public function register(Request $request)
-    {
+    {   
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:35',
             'email' => 'required|string|email|max:35|unique:users',

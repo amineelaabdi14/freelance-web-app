@@ -20,7 +20,7 @@
                     </div>
                     <div class="d-flex flex-wrap justify-content-between w-100 mb-1">
                         <span class="text-secondary "><i class="fa-sharp fa-solid fa-location-dot myIcon"></i>City:</span>
-                        <span class="">{{$user->city??'Unknown'}}</span>
+                        <span class="">{{$user->city->name??'Unknown'}}</span>
                     </div>
                     <div class="d-flex flex-wrap justify-content-between w-100 mb-1">
                         <span class=" text-secondary"><i class="fa-solid fa-user myIcon"></i>Member since:</span>

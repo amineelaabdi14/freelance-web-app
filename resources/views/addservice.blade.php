@@ -19,7 +19,7 @@
                 <div class="row mb-4 d-flex flex-lg-row flex-column-reverse align-items-end">
                     <div class="form-outline">
                       <label class="form-label MyLabels" for="form6Example1">Title</label>
-                      <input name="title" type="text" class=" MyInputs edit-service-input" value="" minlength="260">
+                      <input name="title" type="text" class=" MyInputs edit-service-input" value="" >
                     </div>
                   <div class="col d-flex flex-column align-items-end">
                   </div>
