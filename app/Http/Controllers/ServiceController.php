@@ -111,4 +111,8 @@ class ServiceController extends Controller
         $service->delete(); 
         return redirect()->back();
     }
+
+    public function filterByCat(Category $category){
+        return view('services')->with('services',Service::where('category_id','=',$category->id)->paginate(10));
+    }
 }

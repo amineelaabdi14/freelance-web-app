@@ -12,29 +12,28 @@
               <i class="fas fa-search"></i>
             </button>
           </form>
-
-        <div class="dropdown me-2">
-          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            @if(auth()->user())
-            <img src="{{asset('storage/'.auth()->user()->image)}}" class="rounded-circle" alt="" style="width:30px;">
-            @else 
-            <img src="{{asset('storage/profilePictures/defaultAvatar.jpg')}}" class="rounded-circle" alt="" style="width:30px;">
-            @endif
-           </button>
-          <ul class="dropdown-menu me-5">
-            <li><a class="dropdown-item" href="/profile">Profile</a></li>
-            @role('seller')
-            <li><a class="dropdown-item" href="/my-services">My Services</a></li>
-            @else
-            <li><a class="dropdown-item" href="/become-a-seller">Become a seller</a></li>
-            @endrole
-          </ul>
-        </div>
+          @if(auth()->user()!=null)
+          <div class="dropdown me-2">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="{{asset('storage/profilePictures/defaultAvatar.jpg')}}" class="rounded-circle" alt="" style="width:30px;">
+            </button>
+            <ul class="dropdown-menu me-5">
+              <li><a class="dropdown-item" href="/profile">Profile</a></li>
+              @role('seller')
+              <li><a class="dropdown-item" href="/my-services">My Services</a></li>
+              @else
+              <li><a class="dropdown-item" href="/become-a-seller">Become a seller</a></li>
+              @endrole
+            </ul>
+          </div>
+          @else
+          <a href="{{route('login')}}"><button class="btn btn-primary mt-2">Login</button></a>
+          @endif
     </div>
       <div class="w-100 mt-3 navbar-category">
         <ul class="d-flex flex-row justify-content-around" style="list-style: none;">
           @foreach($categories as $category)
-          <li class="mx-4"><a href="">{{$category['name']}}</a></li>
+          <li class="mx-4"><a href="{{route('filter-by-category',$category->id)}}">{{$category['name']}}</a></li>
           @endforeach
         </ul>
       </div>

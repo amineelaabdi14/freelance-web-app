@@ -48,7 +48,8 @@ Route::get('/user/{user}',function(User $user){
     return view('user',['user'=>$user]);
 })->name('get-user');
 
+Route::get('/search',[ServiceController::class,'search'])->name('search');
 
-Route::post('/search',[ServiceController::class,'search'])->name('search');
+Route::post('/filter/{category}',[ServiceController::class,'filterByCat'])->name('filter-by-category');
 
 
